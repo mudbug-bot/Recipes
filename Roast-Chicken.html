@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roast Chicken - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #c0392b;
+      --secondary: #2c3e50;
+      --light: #ecf0f1;
+      --dark: #34495e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #f5f6fa;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .recipe-card {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 15px;
+    }
+    .meta {
+      color: #7f8c8d;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .intro {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #555;
+    }
+    h2 {
+      color: var(--secondary);
+      font-size: 1.5em;
+      margin: 25px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--light);
+    }
+    h3 {
+      color: var(--secondary);
+      font-size: 1.2em;
+      margin: 18px 0 8px;
+    }
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 12px;
+    }
+    li { margin-bottom: 6px; }
+    .note {
+      background: #fff3cd;
+      border-left: 4px solid #f1c40f;
+      padding: 12px 16px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      color: #7f6a00;
+    }
+    @media (max-width: 768px) {
+      .recipe-card { padding: 25px; }
+      h1 { font-size: 1.8em; }
+    }
+    @media print {
+      .back-btn { display: none; }
+      body { padding: 0; }
+      .recipe-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  <div class="recipe-card">
+    <h1>Roast Chicken</h1>
+    <p class="meta">Julia Child • Simple French roast chicken with pan juices</p>
+    <div class="intro">
+      A whole chicken roasted simply and correctly: well-dried, generously seasoned, and basted as it cooks. The result is crisp skin, juicy meat, and a pan full of flavorful juices to spoon over the carved bird.
+    </div>
+
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 whole chicken (3½–4½ lb / 1.6–2 kg)</li>
+      <li>Salt and freshly ground black pepper</li>
+      <li>2–3 Tbsp softened butter</li>
+      <li>1 small onion, halved</li>
+      <li>1 small carrot, cut into chunks</li>
+      <li>1 small celery stalk, cut into chunks</li>
+      <li>2–3 garlic cloves, lightly crushed (optional)</li>
+      <li>1–2 sprigs fresh thyme or tarragon (optional)</li>
+      <li>1–2 Tbsp olive oil or additional butter for basting</li>
+      <li>1/2–1 cup chicken stock or water (for deglazing, as needed)</li>
+    </ul>
+
+    <h2>Instructions</h2>
+
+    <h3>1. Prepare the chicken</h3>
+    <ol>
+      <li>Preheat the oven to 425°F (220°C).</li>
+      <li>Remove any giblets from the cavity; reserve for stock if desired.</li>
+      <li>Pat the chicken very dry inside and out with paper towels. Dryness helps crisp the skin.</li>
+      <li>Season the cavity generously with salt and pepper.</li>
+      <li>Place the onion, carrot, celery, garlic, and herbs (if using) inside the cavity.</li>
+    </ol>
+    <h3>2. Truss and season the bird</h3>
+    <ol>
+      <li>Truss the chicken with kitchen twine: tie the legs together and tuck the wing tips under the body. This helps it cook evenly.</li>
+      <li>Rub the outside of the chicken with softened butter.</li>
+      <li>Season the skin all over with salt and freshly ground black pepper.</li>
+    </ol>
+
+    <h3>3. Start roasting</h3>
+    <ol>
+      <li>Place the chicken breast-side up on a rack in a roasting pan, or on a bed of sliced onions and carrots in the pan.</li>
+      <li>Roast at 425°F (220°C) for 15–20 minutes to start browning the skin.</li>
+      <li>Baste the chicken quickly with a little melted butter or its own fat.</li>
+    </ol>
+
+    <h3>4. Continue roasting at lower temperature</h3>
+    <ol>
+      <li>Reduce the oven temperature to 375°F (190°C).</li>
+      <li>Continue roasting, basting every 15–20 minutes with the pan juices (tilting the pan to collect them) or with a bit more butter/oil if needed.</li>
+      <li>Roast for an additional 45–60 minutes, depending on the size of the chicken, until:</li>
+      <ul>
+        <li>The juices run clear when you prick the thickest part of the thigh, and</li>
+        <li>An instant-read thermometer inserted into the thigh (not touching bone) reads 165°F (74°C).</li>
+      </ul>
+    </ol>
+
+    <h3>5. Rest the chicken</h3>
+    <ol>
+      <li>Transfer the chicken to a warm platter and loosely tent with foil.</li>
+      <li>Let rest 10–15 minutes before carving. This allows the juices to redistribute.</li>
+    </ol>
+    <h3>6. Make a simple pan sauce</h3>
+    <ol>
+      <li>Pour off most of the fat from the roasting pan, leaving the browned bits (fond).</li>
+      <li>Set the pan over medium heat on the stovetop.</li>
+      <li>Add 1/2–1 cup chicken stock or water to deglaze, scraping up the browned bits with a wooden spoon.</li>
+      <li>Simmer for a few minutes to slightly reduce and concentrate the flavor.</li>
+      <li>Taste and adjust seasoning with salt and pepper. If desired, whisk in a small knob of butter at the end for a richer sauce.</li>
+    </ol>
+
+    <h3>7. Carve and serve</h3>
+    <ol>
+      <li>Carve the chicken into legs, thighs, wings, and breast slices.</li>
+      <li>Arrange on a warm platter.</li>
+      <li>Spoon some of the pan juices/sauce over the chicken and serve the rest in a small sauce boat.</li>
+      <li>Serve with roast potatoes, vegetables, or a simple green salad.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Tip:</strong> For extra crisp skin, leave the chicken uncovered in the refrigerator for an hour or two after salting the skin, then butter and roast as directed.
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:25px;">
+    <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  </div>
+</body>
+</html>

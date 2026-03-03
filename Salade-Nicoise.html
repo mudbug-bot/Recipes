@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salade Niçoise - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #c0392b;
+      --secondary: #2c3e50;
+      --light: #ecf0f1;
+      --dark: #34495e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #f5f6fa;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .recipe-card {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 15px;
+    }
+    .meta {
+      color: #7f8c8d;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .intro {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #555;
+    }
+    h2 {
+      color: var(--secondary);
+      font-size: 1.5em;
+      margin: 25px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--light);
+    }
+    h3 {
+      color: var(--secondary);
+      font-size: 1.2em;
+      margin: 18px 0 8px;
+    }
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 12px;
+    }
+    li { margin-bottom: 6px; }
+    .note {
+      background: #fff3cd;
+      border-left: 4px solid #f1c40f;
+      padding: 12px 16px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      color: #7f6a00;
+    }
+    @media (max-width: 768px) {
+      .recipe-card { padding: 25px; }
+      h1 { font-size: 1.8em; }
+    }
+    @media print {
+      .back-btn { display: none; }
+      body { padding: 0; }
+      .recipe-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  <div class="recipe-card">
+    <h1>Salade Niçoise</h1>
+    <p class="meta">Julia Child • Classic French composed salad with tuna, potatoes, beans, and eggs</p>
+    <div class="intro">
+      A composed salad from Nice with tuna, tomatoes, green beans, potatoes, hard-boiled eggs, olives, and anchovies dressed in a garlicky vinaigrette. Each ingredient is prepared and seasoned separately, then arranged together so every bite tastes of the sun and sea.
+    </div>
+
+    <h2>Ingredients</h2>
+
+    <h3>For the salad</h3>
+    <ul>
+      <li>8–10 small new potatoes, scrubbed</li>
+      <li>8 oz (225 g) green beans, trimmed</li>
+      <li>4 large eggs</li>
+      <li>2–3 ripe tomatoes, wedges or thick slices</li>
+      <li>1 small head Boston or Bibb lettuce (or tender mixed greens)</li>
+      <li>1 small red onion or a few radishes, thinly sliced (optional)</li>
+      <li>6–8 oz high-quality tuna, preferably in olive oil (canned or jarred)</li>
+      <li>8–12 Niçoise or other small black olives</li>
+      <li>6–8 anchovy fillets packed in oil (optional but traditional)</li>
+      <li>2–3 Tbsp chopped fresh parsley or basil</li>
+    </ul>
+
+    <h3>For the vinaigrette</h3>
+    <ul>
+      <li>1 small clove garlic, finely minced</li>
+      <li>1 Tbsp Dijon mustard</li>
+      <li>2–3 Tbsp red wine vinegar or lemon juice</li>
+      <li>6 Tbsp extra-virgin olive oil</li>
+      <li>Salt and freshly ground black pepper</li>
+      <li>1–2 Tbsp chopped fresh herbs (parsley, basil, or chives), optional</li>
+    </ul>
+    <h2>Instructions</h2>
+
+    <h3>1. Cook the potatoes</h3>
+    <ol>
+      <li>Place the scrubbed new potatoes in a pot of cold, salted water.</li>
+      <li>Bring to a boil, then reduce to a simmer and cook until just tender when pierced with a knife, 12–15 minutes depending on size.</li>
+      <li>Drain and let cool slightly. While still warm, slice into halves or thick rounds.</li>
+      <li>Toss the warm potatoes with a spoonful of vinaigrette and a pinch of salt so they absorb flavor. Set aside.</li>
+    </ol>
+
+    <h3>2. Cook the green beans</h3>
+    <ol>
+      <li>Bring a pot of salted water to a boil.</li>
+      <li>Add the trimmed green beans and cook until just tender-crisp, 3–5 minutes.</li>
+      <li>Drain and plunge into ice water to stop the cooking and set the color.</li>
+      <li>Drain well and pat dry. Toss with a little vinaigrette and salt.</li>
+    </ol>
+
+    <h3>3. Cook the eggs</h3>
+    <ol>
+      <li>Place eggs in a saucepan and cover with cold water.</li>
+      <li>Bring just to a boil, then turn off the heat, cover, and let stand 10–12 minutes.</li>
+      <li>Transfer eggs to cold water to cool, then peel and cut into halves or quarters.</li>
+      <li>Season lightly with salt and pepper.</li>
+    </ol>
+
+    <h3>4. Make the vinaigrette</h3>
+    <ol>
+      <li>In a small bowl, combine the minced garlic, Dijon mustard, and vinegar or lemon juice.</li>
+      <li>Whisk to combine, then slowly whisk in the olive oil to form an emulsion.</li>
+      <li>Season with salt, pepper, and chopped herbs if using.</li>
+      <li>Taste and adjust acidity or seasoning as needed.</li>
+    </ol>
+
+    <h3>5. Prepare the tuna and other components</h3>
+    <ol>
+      <li>Drain the tuna and break it into large, attractive chunks.</li>
+      <li>Lightly spoon some vinaigrette over the tuna to moisten and season.</li>
+      <li>Slice the tomatoes and season with a little salt, pepper, and a drizzle of vinaigrette.</li>
+      <li>Wash and dry the lettuce leaves; tear into large pieces.</li>
+    </ol>
+
+    <h3>6. Assemble the salad</h3>
+    <ol>
+      <li>On a large platter or individual plates, arrange the lettuce as a base.</li>
+      <li>Compose the salad in sections: mounds of dressed potatoes, green beans, tomatoes, and tuna.</li>
+      <li>Arrange the egg halves or quarters around the platter.</li>
+      <li>Scatter olives and anchovy fillets (if using) over the top.</li>
+      <li>Drizzle additional vinaigrette over everything or serve it on the side.</li>
+      <li>Finish with chopped parsley or basil.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Notes:</strong> Salade Niçoise should be robust and assertively seasoned, but not soupy with dressing. Each component is seasoned separately, then the whole platter gets a final drizzle. Good tuna, ripe tomatoes, and properly cooked potatoes and beans make all the difference.
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:25px;">
+    <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  </div>
+</body>
+</html>

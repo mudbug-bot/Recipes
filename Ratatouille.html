@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ratatouille - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #c0392b;
+      --secondary: #2c3e50;
+      --light: #ecf0f1;
+      --dark: #34495e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #f5f6fa;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .recipe-card {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 15px;
+    }
+    .meta {
+      color: #7f8c8d;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .intro {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #555;
+    }
+    h2 {
+      color: var(--secondary);
+      font-size: 1.5em;
+      margin: 25px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--light);
+    }
+    h3 {
+      color: var(--secondary);
+      font-size: 1.2em;
+      margin: 18px 0 8px;
+    }
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 12px;
+    }
+    li { margin-bottom: 6px; }
+    .note {
+      background: #fff3cd;
+      border-left: 4px solid #f1c40f;
+      padding: 12px 16px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      color: #7f6a00;
+    }
+    @media (max-width: 768px) {
+      .recipe-card { padding: 25px; }
+      h1 { font-size: 1.8em; }
+    }
+    @media print {
+      .back-btn { display: none; }
+      body { padding: 0; }
+      .recipe-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  <div class="recipe-card">
+    <h1>Ratatouille</h1>
+    <p class="meta">Julia Child • Provençal vegetable stew of eggplant, zucchini, peppers, and tomatoes</p>
+    <div class="intro">
+      A classic vegetable stew from Provence, ratatouille layers and slowly cooks eggplant, zucchini, peppers, onions, and tomatoes with garlic and herbs. It’s even better the next day and can be served warm or at room temperature as a side or light main.
+    </div>
+
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 lb (450 g) eggplant, cut into 1/2-inch cubes or slices</li>
+      <li>1 lb (450 g) zucchini, sliced into rounds or half-moons</li>
+      <li>1–2 tsp salt (for salting eggplant and zucchini)</li>
+      <li>4 Tbsp olive oil (more as needed)</li>
+      <li>1 large onion, thinly sliced</li>
+      <li>1 green bell pepper, seeded and sliced</li>
+      <li>1 red or yellow bell pepper, seeded and sliced</li>
+      <li>2–3 cloves garlic, minced</li>
+      <li>4–5 ripe tomatoes, peeled, seeded, and chopped (or 1 can good-quality tomatoes, drained and chopped)</li>
+      <li>1–2 Tbsp chopped fresh parsley</li>
+      <li>1–2 Tbsp chopped fresh basil or thyme (or 1 tsp dried Herbes de Provence)</li>
+      <li>Salt and freshly ground black pepper to taste</li>
+    </ul>
+
+    <h2>Instructions</h2>
+
+    <h3>1. Prep and salt the eggplant and zucchini</h3>
+    <ol>
+      <li>Place the cubed/sliced eggplant in a bowl and sprinkle with a little salt. Toss and let stand in a colander for 20–30 minutes to draw out some moisture and bitterness.</li>
+      <li>Do the same with the sliced zucchini in a separate colander if desired.</li>
+      <li>After resting, rinse quickly under cold water and pat dry thoroughly with paper towels.</li>
+    </ol>
+    <h3>2. Sauté the eggplant and zucchini</h3>
+    <ol>
+      <li>In a large skillet, heat 2 Tbsp olive oil over medium-high heat.</li>
+      <li>Add the eggplant in batches (do not overcrowd) and sauté until lightly browned and just tender. Remove to a large bowl.</li>
+      <li>Add a bit more oil if needed and sauté the zucchini slices until lightly browned and tender. Add to the bowl with the eggplant.</li>
+    </ol>
+
+    <h3>3. Cook the onions and peppers</h3>
+    <ol>
+      <li>In the same pan (add a little more oil if necessary), cook the sliced onion over medium heat until softened and lightly golden.</li>
+      <li>Add the sliced bell peppers and cook until they begin to soften.</li>
+      <li>Stir in the minced garlic and cook briefly until fragrant, about 30 seconds.</li>
+    </ol>
+
+    <h3>4. Add the tomatoes and herbs</h3>
+    <ol>
+      <li>Add the chopped tomatoes to the pan with the onions and peppers.</li>
+      <li>Cook over medium heat for 5–10 minutes, until the tomatoes break down and the mixture becomes saucy.</li>
+      <li>Season with salt, pepper, parsley, and basil/thyme (or Herbes de Provence).</li>
+    </ol>
+
+    <h3>5. Combine and simmer</h3>
+    <ol>
+      <li>Add the sautéed eggplant and zucchini back into the pan (or transfer everything to a larger pot if needed).</li>
+      <li>Gently fold the vegetables together so they are evenly distributed but not mashed.</li>
+      <li>Cover and simmer over low heat for 20–30 minutes, stirring occasionally, until all the vegetables are tender and the flavors have melded.</li>
+      <li>If the mixture is very watery, cook uncovered for a few minutes to reduce. If too dry, add a splash of water or stock.</li>
+      <li>Taste and adjust seasoning with more salt and pepper as needed.</li>
+    </ol>
+    <h3>6. Serve</h3>
+    <ol>
+      <li>Serve warm or at room temperature.</li>
+      <li>Drizzle with a little extra olive oil and sprinkle with fresh herbs just before serving.</li>
+      <li>Ratatouille is excellent as a side dish, over rice or pasta, or with crusty bread. It improves in flavor after resting a few hours or overnight.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Make ahead:</strong> Ratatouille keeps well in the refrigerator for several days and reheats beautifully. The flavors deepen over time.
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:25px;">
+    <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  </div>
+</body>
+</html>

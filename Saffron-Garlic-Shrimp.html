@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffron Garlic Shrimp</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; background: #0d0d0d; color: #f0ebe3; min-height: 100vh; }
+        .recipe-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 2rem 1.5rem 1.5rem; text-align: center; border-bottom: 2px solid #c9a84c; }
+        .recipe-header h1 { font-size: 2rem; color: #c9a84c; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .recipe-header .subtitle { font-size: 1rem; color: #a89060; font-style: italic; }
+        .recipe-meta { display: flex; justify-content: center; gap: 2rem; padding: 1rem 1.5rem; background: #111; border-bottom: 1px solid #2a2a2a; flex-wrap: wrap; }
+        .meta-item { text-align: center; }
+        .meta-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #c9a84c; margin-bottom: 0.2rem; }
+        .meta-value { font-size: 0.95rem; color: #f0ebe3; }
+        .recipe-body { max-width: 700px; margin: 0 auto; padding: 1.5rem; }
+        .section-title { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.12em; color: #c9a84c; border-bottom: 1px solid #c9a84c44; padding-bottom: 0.4rem; margin: 1.8rem 0 1rem; }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 0.45rem 0; border-bottom: 1px solid #1e1e1e; font-size: 0.97rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .ingredients-list li::before { content: '·'; color: #c9a84c; font-size: 1.2rem; line-height: 1.2; flex-shrink: 0; }
+        .instructions-list { list-style: none; padding: 0; counter-reset: step-counter; }
+        .instructions-list li { counter-increment: step-counter; padding: 0.8rem 0 0.8rem 3rem; border-bottom: 1px solid #1e1e1e; font-size: 0.97rem; line-height: 1.6; position: relative; }
+        .instructions-list li::before { content: counter(step-counter); position: absolute; left: 0; top: 0.8rem; background: #c9a84c; color: #0d0d0d; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; font-family: sans-serif; }
+        .tips-list { list-style: none; padding: 0; }
+        .tips-list li { padding: 0.5rem 0 0.5rem 1.5rem; border-bottom: 1px solid #1e1e1e; font-size: 0.93rem; line-height: 1.55; position: relative; color: #ccc; font-style: italic; }
+        .tips-list li::before { content: '★'; position: absolute; left: 0; color: #c9a84c; font-size: 0.75rem; top: 0.6rem; 
+bash}
+        .back-link { display: inline-block; margin: 2rem 0 0.5rem; color: #c9a84c; text-decoration: none; font-size: 0.9rem; font-family: sans-serif; }
+        .back-link:hover { text-decoration: underline; }
+        .shopping-btn { display: inline-block; margin: 0.5rem 0 2rem; padding: 0.6rem 1.4rem; background: #c9a84c; color: #0d0d0d; text-decoration: none; font-family: sans-serif; font-size: 0.9rem; font-weight: bold; border-radius: 4px; }
+        .shopping-btn:hover { background: #e0bc60; }
+    </style>
+</head>
+<body>
+    <div class="recipe-header">
+        <h1>Saffron Garlic Shrimp</h1>
+        <div class="subtitle">Golden threads, bright garlic, and plump shrimp in a silky pan sauce</div>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><div class="meta-label">Serves</div><div class="meta-value">2–3</div></div>
+        <div class="meta-item"><div class="meta-label">Cook Time</div><div class="meta-value">~15 min</div></div>
+        <div class="meta-item"><div class="meta-label">Style</div><div class="meta-value">Seafood · French-Spanish</div></div>
+    </div>
+    <div class="recipe-body">
+        <a class="back-link" href="Recipe-Index.html">← Back to Recipe Index</a><br>
+        <a class="shopping-btn" href="Saffron-Garlic-Shrimp-Shopping.html">📝 Shopping List</a>
+        <div class="section-title">Ingredients</div>
+        <ul class="ingredients-list">
+            <li>12 jumbo shrimp, peeled &amp; deveined</li>
+            <li>½ tsp saffron threads</li>
+            <li>¼ cup dry white wine (or water)</li>
+            <li>4 garlic cloves, thinly sliced</li>
+            <li>1 shallot, finely diced</li>
+            <li>2 tbsp extra virgin olive oil</li>
+            <li>1 lemon, cut into wedges for serving</li>
+            <li>3 tbsp fresh parsley, chopped</li>
+            <li>Salt &amp; black pepper</li>
+        </ul>
+        <div class="section-title">Instructions</div>
+        <ol class="instructions-list">
+            <li>Heat the wine (or water) until just before boiling, transfer to a bowl, pinch in the saffron threads, and set aside to infuse.</li>
+            <li>Pat the shrimp dry with paper towels, then season with salt and pepper.</li>
+            <li>Heat a pan over medium heat and add the olive oil. After 2 minutes, add the sliced garlic and mix with the oil. 2 minutes later, add the diced shallot, season with salt and pepper, and stir.</li>
+            <li>Add the shrimp seasoned side down. After 1 minute, flip them, then add the saffron-infused liquid and 2 tablespoons of parsley. Give the pan a quick shake.</li>
+            <li>After the shrimp have cooked for a total of 2 minutes, remove them and transfer to a shallow bowl. Continue cooking the sauce for another 2 minutes to let it thicken up, then pour it over the shrimp and sprinkle with the remaining parsley.</li>
+            <li>Serve with lemon wedges on the side, plus crusty bread, pasta, or rice.</li>
+        </ol>
+        <div class="section-title">Tips</div>
+        <ul class="tips-list">
+            <li>Use high-quality saffron — it's the star of the dish and makes a huge difference</li>
+            <li>Wine adds depth and a subtle acidity; water keeps it lighter and lets the saffron shine through</li>
+            <li>Don't overcook the garlic or it will turn bitter; keep it at medium heat and watch carefully</li>
+        </ul>
+    </div>
+</body>
+</html>

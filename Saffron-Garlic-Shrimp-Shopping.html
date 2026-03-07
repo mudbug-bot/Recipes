@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saffron Garlic Shrimp – Shopping List</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Georgia', serif; background: #0d0d0d; color: #f0ebe3; min-height: 100vh; }
-        .recipe-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 1.5rem 1.5rem 1.2rem; text-align: center; border-bottom: 2px solid #c9a84c; }
-        .recipe-header h1 { font-size: 1.6rem; color: #c9a84c; margin-bottom: 0.3rem; }
-        .recipe-header .subtitle { font-size: 0.9rem; color: #a89060; font-style: italic; }
-        .shopping-body { max-width: 600px; margin: 0 auto; padding: 1.5rem; }
-        .section-title { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; color: #c9a84c; border-bottom: 1px solid #c9a84c44; padding-bottom: 0.4rem; margin: 1.6rem 0 0.8rem; }
-        .shop-list { list-style: none; padding: 0; }
-        .shop-list li { padding: 0.45rem 0; border-bottom: 1px solid #1e1e1e; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 0.6rem; }
-        .shop-list li::before { content: '☐'; color: #c9a84c; font-size: 1rem; flex-shrink: 0; }
-        .back-link { display: inline-block; margin: 1.5rem 0 0.5rem; color: #c9a84c; text-decoration: none; font-size: 0.9rem; font-family: sans-serif; }
-        .back-link:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saffron Garlic Shrimp – Shopping List</title>
+  <style>
+    :root { --primary:#c0392b; --secondary:#2c3e50; --light:#ecf0f1; --dark:#34495e; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      line-height:1.6;
+      color:var(--dark);
+      background:#f5f6fa;
+      padding:20px;
+      max-width:900px;
+      margin:0 auto;
+    }
+    .back-btn {
+      display:inline-block;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:600;
+      margin:0 10px 20px 0;
+    }
+    .card {
+      background:#fff;
+      border-radius:10px;
+      padding:40px;
+      box-shadow:0 4px 6px rgba(0,0,0,.1);
+    }
+    h1 {
+      color:var(--primary);
+      font-size:2em;
+      margin-bottom:10px;
+      border-bottom:3px solid var(--primary);
+      padding-bottom:15px;
+    }
+    h2 {
+      font-size:1.2em;
+      margin:20px 0 8px;
+      color:var(--secondary);
+    }
+    ul { margin-left:25px; margin-bottom:10px; }
+    li { margin-bottom:4px; }
+  </style>
 </head>
 <body>
-    <div class="recipe-header">
-        <h1>🛒 Saffron Garlic Shrimp</h1>
-        <div class="subtitle">Shopping List</div>
-    </div>
-    <div class="shopping-body">
-        <a class="back-link" href="Saffron-Garlic-Shrimp.html">← Back to Recipe</a>
-        <div class="section-title">Must Have</div>
-        <ul class="shop-list">
-            <li>12 jumbo shrimp, peeled &amp; deveined</li>
-            <li>Saffron threads (½ tsp — buy high quality)</li>
-            <li>Dry white wine (¼ cup) — or water</li>
-            <li>Fresh parsley (3 tbsp chopped)</li>
-            <li>1 lemon</li>
-        </ul>
-        <div class="section-title">Aromatics – Check Fridge First</div>
-        <ul class="shop-list">
-            <li>4 garlic cloves</li>
-            <li>1 shallot</li>
-        </ul>
-        <div class="section-title">Optional</div>
-        <ul class="shop-list">
-            <li>Crusty bread, pasta, or rice — for serving</li>
-        </ul>
-        <div class="section-title">Spices – Check Pantry First</div>
-        <ul class="shop-list">
-            <li>Salt</li>
-            <li>Black pepper</li>
-        </ul>
-        <div class="section-title">Other</div>
-        <ul class="shop-list">
-            <li>Extra virgin olive oil (2 tbsp)</li>
-        </ul>
-    </div>
+  <a href="Saffron-Garlic-Shrimp.html" class="back-btn">← Back to Recipe</a>
+  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+
+  <div class="card">
+    <h1>Saffron Garlic Shrimp – Shopping List</h1>
+
+    <h2>Must Have Items</h2>
+    <ul>
+      <li>Jumbo shrimp (12), peeled &amp; deveined</li>
+      <li>Saffron threads (½ tsp — buy high quality)</li>
+      <li>Dry white wine (¼ cup) — or water</li>
+      <li>Fresh parsley</li>
+      <li>Lemon</li>
+    </ul>
+
+    <h2>Aromatics – Check Fridge</h2>
+    <ul>
+      <li>Garlic (4 cloves)</li>
+      <li>Shallot (1)</li>
+    </ul>
+
+    <h2>Optional Items</h2>
+    <ul>
+      <li>Crusty bread, pasta, or rice — for serving</li>
+    </ul>
+
+    <h2>Spices – Check Pantry First</h2>
+    <ul>
+      <li>Salt</li>
+      <li>Black pepper</li>
+    </ul>
+
+    <h2>Other</h2>
+    <ul>
+      <li>Extra virgin olive oil (2 tbsp)</li>
+    </ul>
+  </div>
 </body>
 </html>

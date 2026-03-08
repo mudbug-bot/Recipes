@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coquilles Saint-Jacques - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #2B547E;
+      --secondary: #2c3e50;
+      --light: #ecf0f1;
+      --dark: #34495e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #f5f6fa;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .recipe-card {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 15px;
+    }
+    .meta {
+      color: #7f8c8d;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .intro {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #555;
+    }
+    h2 {
+      color: var(--secondary);
+      font-size: 1.5em;
+      margin: 25px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--light);
+    }
+    h3 {
+      color: var(--secondary);
+      font-size: 1.2em;
+      margin: 18px 0 8px;
+    }
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 12px;
+    }
+    li { margin-bottom: 6px; }
+    .note {
+      background: #fff3cd;
+      border-left: 4px solid #f1c40f;
+      padding: 12px 16px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      color: #7f6a00;
+    }
+    @media (max-width: 768px) {
+      .recipe-card { padding: 25px; }
+      h1 { font-size: 1.8em; }
+    }
+    @media print {
+      .back-btn { display: none; }
+      body { padding: 0; }
+      .recipe-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  <div class="recipe-card">
+    <h1>Coquilles Saint-Jacques</h1>
+    <p class="meta">Julia Child • Scallops in white wine and cream, gratinéed with cheese</p>
+    <div class="intro">
+      Tender scallops poached in white wine, folded into a rich mushroom and shallot sauce, then topped with cheese and browned under the broiler. A classic French first course served in scallop shells or gratin dishes.
+    </div>
+
+    <a href="Coquilles-Saint-Jacques-Shopping.html" class="back-btn">📝 Shopping List</a>
+
+    <h2>Ingredients</h2>
+
+    <h3>For the scallops</h3>
+    <ul>
+      <li>1 lb sea scallops, rinsed and patted dry</li>
+      <li>1 cup dry white wine</li>
+      <li>1/2 cup fish or clam stock (or additional wine)</li>
+      <li>1 small carrot, sliced</li>
+      <li>1 small onion, sliced</li>
+      <li>1 bay leaf</li>
+      <li>2–3 parsley sprigs</li>
+      <li>Salt and freshly ground black pepper</li>
+    </ul>
+
+    <h3>For the sauce and gratin</h3>
+    <ul>
+      <li>3 Tbsp butter (divided)</li>
+      <li>1 Tbsp olive oil (optional, for mushrooms)</li>
+      <li>8 oz mushrooms, sliced</li>
+      <li>1–2 shallots, finely minced</li>
+      <li>2 Tbsp flour</li>
+      <li>3/4–1 cup reserved scallop poaching liquid (wine/stock mixture)</li>
+      <li>1/2–3/4 cup heavy cream</li>
+      <li>1–2 Tbsp grated Parmesan or Gruyère cheese (for sauce)</li>
+      <li>1/2–3/4 cup grated Gruyère and/or Swiss cheese (for topping)</li>
+      <li>2–3 Tbsp fresh breadcrumbs</li>
+      <li>2 Tbsp chopped fresh parsley (for garnish)</li>
+    </ul>
+
+    <h2>Instructions</h2>
+
+    <h3>1. Poach the scallops</h3>
+    <ol>
+      <li>In a wide saucepan, add the wine, stock, carrot, onion, bay leaf, and parsley sprigs. Season lightly with salt and pepper.</li>
+      <li>Bring to a gentle simmer and cook for 10 minutes to flavor the liquid.</li>
+      <li>Add the scallops in a single layer if possible.</li>
+      <li>Simmer very gently for 3–5 minutes, just until the scallops are barely firm and opaque. Do not overcook.</li>
+      <li>Remove the scallops with a slotted spoon and set aside in a bowl.</li>
+      <li>Strain the poaching liquid and reserve 3/4–1 cup for the sauce.</li>
+    </ol>
+    <h3>2. Prepare the mushrooms</h3>
+    <ol>
+      <li>In a skillet, melt 1 Tbsp butter with 1 Tbsp olive oil over medium-high heat.</li>
+      <li>Add the sliced mushrooms and sauté until they release their liquid and then begin to brown.</li>
+      <li>Season lightly with salt and pepper. Set aside.</li>
+    </ol>
+
+    <h3>3. Make the sauce</h3>
+    <ol>
+      <li>In a saucepan, melt 2 Tbsp butter over medium heat.</li>
+      <li>Add the minced shallots and cook until softened but not browned.</li>
+      <li>Stir in the flour and cook 1–2 minutes to form a roux.</li>
+      <li>Gradually whisk in the reserved poaching liquid, stirring until smooth and slightly thickened.</li>
+      <li>Add the cream and simmer gently for a few minutes until the sauce coats the back of a spoon.</li>
+      <li>Stir in 1–2 Tbsp grated Parmesan or Gruyère. Taste and adjust seasoning with salt and pepper.</li>
+    </ol>
+
+    <h3>4. Combine scallops and sauce</h3>
+    <ol>
+      <li>Fold the scallops and sautéed mushrooms into the sauce, coating them gently.</li>
+      <li>If the sauce seems too thick, thin with a bit more cream or poaching liquid. If too thin, simmer briefly to reduce.</li>
+    </ol>
+
+    <h3>5. Assemble in shells or gratin dishes</h3>
+    <ol>
+      <li>Preheat the broiler.</li>
+      <li>Butter individual scallop shells or small gratin dishes.</li>
+      <li>Spoon the scallop mixture into the dishes, dividing evenly.</li>
+      <li>Top each with a sprinkling of fresh breadcrumbs and a generous layer of grated Gruyère/Swiss cheese.</li>
+    </ol>
+
+    <h3>6. Gratinée and serve</h3>
+    <ol>
+      <li>Place the dishes under the broiler, a few inches from the heat, and broil just until the tops are bubbly and lightly browned.</li>
+      <li>Watch closely to avoid burning.</li>
+      <li>Remove carefully (dishes will be very hot) and sprinkle with chopped fresh parsley.</li>
+      <li>Serve immediately while sizzling, with crusty bread or as a first course.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Make ahead:</strong> You can poach the scallops and make the sauce a few hours in advance. Combine and assemble in shells, then refrigerate. Bring to room temperature, top with cheese and breadcrumbs, and gratinée just before serving.
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:25px;">
+    <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+  </div>
+</body>
+</html>

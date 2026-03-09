@@ -1,90 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Cucumber Tomato Salad – Shopping List</title>
-  <style>
-    :root { --primary:#c0392b; --secondary:#2c3e50; --light:#ecf0f1; --dark:#34495e; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      line-height:1.6;
-      color:var(--dark);
-      background:#f5f6fa;
-      padding:20px;
-      max-width:900px;
-      margin:0 auto;
-    }
-    .back-btn {
-      display:inline-block;
-      background:var(--primary);
-      color:#fff;
-      padding:10px 20px;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:600;
-      margin:0 10px 20px 0;
-    }
-    .card {
-      background:#fff;
-      border-radius:10px;
-      padding:40px;
-      box-shadow:0 4px 6px rgba(0,0,0,.1);
-    }
-    h1 {
-      color:var(--primary);
-      font-size:2em;
-      margin-bottom:10px;
-      border-bottom:3px solid var(--primary);
-      padding-bottom:15px;
-    }
-    h2 {
-      font-size:1.2em;
-      margin:20px 0 8px;
-      color:var(--secondary);
-    }
-    ul { margin-left:25px; margin-bottom:10px; }
-    li { margin-bottom:4px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List - Simple Cucumber Tomato Salad</title>
+    <style>
+        :root { --primary: #2B547E; --secondary: #2c3e50; --light: #ecf0f1; --dark: #34495e; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--dark); background: #f5f6fa; padding: 20px; max-width: 900px; margin: 0 auto; }
+        .back-btn { display: inline-block; background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-bottom: 20px; }
+        .back-btn:hover { background: #1a3a5c; }
+        .shopping-card { background: #fff; border-radius: 10px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,.1); }
+        h1 { color: var(--secondary); margin-bottom: 10px; }
+        .section { margin: 25px 0; }
+        .section h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 15px; }
+        .section ul { list-style: none; padding: 0; }
+        .section li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; }
+        .section li:before { content: "☐"; margin-right: 10px; font-size: 18px; color: var(--primary); }
+        .tip { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 15px; margin: 20px 0; color: #856404; }
+    </style>
 </head>
 <body>
-  <a href="Simple-Cucumber-Tomato-Salad.html" class="back-btn">← Back to Recipe</a>
-  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
+    <a href="Simple-Cucumber-Tomato-Salad.html" class="back-btn">← Back to Recipe</a>
 
-  <div class="card">
-    <h1>Simple Cucumber Tomato Salad – Shopping List</h1>
+    <div class="shopping-card">
+        <h1>Shopping List</h1>
+        <p style="color: #7f8c8d; margin-bottom: 30px;">Simple Cucumber Tomato Salad</p>
 
-    <h2>Must Have Items</h2>
-    <ul>
-      <li>Tomatoes (2 medium, or 1 cup cherry tomatoes)</li>
-      <li>English cucumber (1)</li>
-      <li>Lemon (1)</li>
-      <li>Fresh parsley or mint</li>
-    </ul>
+        <div class="section">
+            <h2>🛒 Must Have</h2>
+            <ul>
+                <li>2 medium tomatoes (or 1 cup cherry tomatoes)</li>
+                <li>1 English cucumber</li>
+                <li>Lemon – 1 (for 1½ tbsp juice)</li>
+            </ul>
+        </div>
 
-    <h2>Aromatics – Check Fridge</h2>
-    <ul>
-      <li>Red onion (¼)</li>
-      <li>Garlic (1 small clove)</li>
-    </ul>
+        <div class="section">
+            <h2>🧄 Aromatics – Check Fridge</h2>
+            <ul>
+                <li>Red onion – ¼, thinly sliced</li>
+                <li>Garlic – 1 small clove, minced</li>
+                <li>Fresh parsley or mint – 2 tbsp, chopped</li>
+            </ul>
+        </div>
 
-    <h2>Optional Items</h2>
-    <ul>
-      <li>Kalamata olives (¼ cup, pitted)</li>
-      <li>Feta cheese (for topping)</li>
-    </ul>
+        <div class="section">
+            <h2>❓ Optional</h2>
+            <ul>
+                <li>Kalamata olives – ¼ cup, pitted and halved</li>
+                <li>Feta cheese – crumbled, for topping</li>
+            </ul>
+        </div>
 
-    <h2>Spices – Check Pantry First</h2>
-    <ul>
-      <li>Dried oregano (½ tsp)</li>
-      <li>Salt &amp; black pepper</li>
-    </ul>
+        <div class="section">
+            <h2>🌶️ Spices – Check Pantry First</h2>
+            <ul>
+                <li>Dried oregano – ½ tsp</li>
+                <li>Salt &amp; black pepper – to taste</li>
+            </ul>
+        </div>
 
-    <h2>Other</h2>
-    <ul>
-      <li>Olive oil (3 tbsp)</li>
-    </ul>
-  </div>
+        <div class="section">
+            <h2>🥫 Other</h2>
+            <ul>
+                <li>Olive oil – 3 tbsp</li>
+            </ul>
+        </div>
+
+        <div class="tip">
+            <strong>Tip:</strong> Season just before serving to keep the vegetables crisp. Feta on top takes this from simple to impressive.
+        </div>
+    </div>
 </body>
 </html>

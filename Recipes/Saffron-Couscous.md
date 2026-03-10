@@ -10,6 +10,8 @@
 - 2 tbsp olive oil or butter
 - ½ tsp salt
 - ¼ tsp cumin (optional)
+- ¼ cup toasted pine nuts — highly preferred (optional)
+- ¼ cup golden raisins — highly preferred (optional)
 - 2 tbsp fresh parsley or mint, chopped
 
 ## Instructions

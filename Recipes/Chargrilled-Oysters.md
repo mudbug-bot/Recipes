@@ -17,7 +17,7 @@ Blend everything together. Make ahead and refrigerate.
 
 - 24 fresh oysters, on the half shell
 - ½ cup grated Parmesan and Romano, mixed
-- Fresh French bread for serving
+- Leidenheimer's French bread for serving
 
 ## Instructions
 

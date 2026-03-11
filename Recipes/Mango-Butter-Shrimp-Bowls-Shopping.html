@@ -3,102 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mango Butter Shrimp Bowls – Shopping List</title>
+  <title>Shopping List - Mango Butter Shrimp Bowls – Shopping List</title>
   <style>
     :root { --primary:#2B547E; --secondary:#2c3e50; --light:#ecf0f1; --dark:#34495e; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      line-height:1.6;
-      color:var(--dark);
-      background:#f5f6fa;
-      padding:20px;
-      max-width:900px;
-      margin:0 auto;
-    }
-    .back-btn {
-      display:inline-block;
-      background:var(--primary);
-      color:#fff;
-      padding:10px 20px;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:600;
-      margin:0 10px 20px 0;
-    }
-    .card {
-      background:#fff;
-      border-radius:10px;
-      padding:40px;
-      box-shadow:0 4px 6px rgba(0,0,0,.1);
-    }
-    h1 {
-      color:var(--primary);
-      font-size:2em;
-      margin-bottom:10px;
-      border-bottom:3px solid var(--primary);
-      padding-bottom:15px;
-    }
-    h2 {
-      font-size:1.2em;
-      margin:20px 0 8px;
-      color:var(--secondary);
-    }
-    ul { margin-left:25px; margin-bottom:10px; }
-    li { margin-bottom:4px; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.6; color:var(--dark); background:#f5f6fa; padding:20px; max-width:900px; margin:0 auto; }
+    .back-btn { display:inline-block; background:var(--primary); color:#fff; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:600; margin-bottom:20px; }
+    .shopping-card { background:#fff; border-radius:10px; padding:40px; box-shadow:0 4px 6px rgba(0,0,0,.1); }
+    h1 { color:var(--secondary); margin-bottom:10px; }
+    .section { margin:25px 0; }
+    .section h2 { color:var(--primary); border-bottom:2px solid var(--primary); padding-bottom:10px; margin-bottom:15px; }
+    .section ul { list-style:none; padding:0; }
+    .section li { padding:10px 0; border-bottom:1px solid #eee; display:flex; align-items:center; }
+    .section li:before { content:"☐"; margin-right:10px; font-size:18px; color:var(--primary); }
   </style>
 </head>
 <body>
   <a href="Mango-Butter-Shrimp-Bowls.html" class="back-btn">← Back to Recipe</a>
-  <a href="Recipe-Index.html" class="back-btn">← Back to Recipe Index</a>
 
-  <div class="card">
-    <h1>Mango Butter Shrimp Bowls – Shopping List</h1>
+  <div class="shopping-card">
+    <h1>Shopping List</h1>
+    <p style="color:#7f8c8d; margin-bottom:30px;">Mango Butter Shrimp Bowls – Shopping List</p>
 
-    <h2>Must Have Items</h2>
-    <ul>
-      <li>2 lbs shrimp (Argentinian red shrimp recommended)</li>
-      <li>1 lb bacon, sliced</li>
-      <li>2 (12-oz) cans black beans, drained and rinsed</li>
-      <li>1 red bell pepper</li>
-      <li>Long cherry tomatoes (or regular cherry tomatoes)</li>
-      <li>1 ripe mango</li>
-      <li>Steamed rice</li>
-      <li>Avocado</li>
-      <li>Lime wedges</li>
-      <li>Cotija cheese</li>
-      <li>Optional: tortillas (for toasting/serving)</li>
-    </ul>
-
-    <h2>Aromatics – Check Fridge</h2>
-    <ul>
-      <li>½ onion</li>
-      <li>3 cloves garlic (for beans)</li>
-      <li>4–5 cloves garlic (for shrimp)</li>
-    </ul>
-
-    <h2>Optional Items</h2>
-    <ul>
-      <li>Tortillas, for serving as tacos</li>
-    </ul>
-
-    <h2>Spices – Check Pantry First</h2>
-    <ul>
-      <li>Ancho chili powder</li>
-      <li>Kosher salt</li>
-      <li>Fresh cracked black pepper</li>
-      <li>Sherry vinegar or balsamic (for tomatoes)</li>
-      <li>Ancho or Aleppo chili (for finishing)</li>
-    </ul>
-
-    <h2>Other</h2>
-    <ul>
-      <li>Neutral oil</li>
-      <li>Olive oil</li>
-      <li>Beef stock (or water) for beans</li>
-      <li>Butter (for beans and shrimp)</li>
-      <li>Lemon juice (for shrimp)</li>
-    </ul>
+        <div class="section">
+            <h2>🛒 Must Have</h2>
+            <ul>
+                <li>2 lbs shrimp (Argentinian red shrimp recommended)</li>
+                <li>1 lb bacon, sliced</li>
+                <li>2 (12-oz) cans black beans, drained and rinsed</li>
+                <li>1 red bell pepper</li>
+                <li>Long cherry tomatoes (or regular cherry tomatoes)</li>
+                <li>1 ripe mango</li>
+                <li>Steamed rice</li>
+                <li>Avocado</li>
+                <li>Lime wedges</li>
+                <li>Cotija cheese</li>
+                <li>Optional: tortillas (for toasting/serving)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>🧄 Aromatics – Check Fridge</h2>
+            <ul>
+                <li>½ onion</li>
+                <li>3 cloves garlic (for beans)</li>
+                <li>4–5 cloves garlic (for shrimp)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>❓ Optional</h2>
+            <ul>
+                <li>Tortillas, for serving as tacos</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>🌶️ Spices – Check Pantry First</h2>
+            <ul>
+                <li>Ancho chili powder</li>
+                <li>Kosher salt</li>
+                <li>Fresh cracked black pepper</li>
+                <li>Sherry vinegar or balsamic (for tomatoes)</li>
+                <li>Ancho or Aleppo chili (for finishing)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>🥫 Other</h2>
+            <ul>
+                <li>Neutral oil</li>
+                <li>Olive oil</li>
+                <li>Beef stock (or water) for beans</li>
+                <li>Butter (for beans and shrimp)</li>
+                <li>Lemon juice (for shrimp)</li>
+            </ul>
+        </div>
   </div>
 </body>
 </html>

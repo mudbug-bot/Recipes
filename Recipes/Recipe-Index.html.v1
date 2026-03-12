@@ -57,9 +57,6 @@
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 12px;
-            z-index: 100;
         }
         
         .search-box input {
@@ -81,62 +78,6 @@
             gap: 10px;
             margin-top: 15px;
             flex-wrap: wrap;
-        }
-
-        .results-count {
-            margin-top: 12px;
-            color: #5d6d7e;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .top-controls {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 10px 0 6px;
-        }
-
-        .sort-wrap {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: #5d6d7e;
-        }
-
-        .sort-wrap select {
-            padding: 8px 10px;
-            border: 1px solid #d7dee5;
-            border-radius: 8px;
-            background: #fff;
-            color: var(--dark);
-        }
-
-        .quick-jump {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .quick-jump a {
-            text-decoration: none;
-            background: #eef3f8;
-            color: var(--secondary);
-            border-radius: 999px;
-            padding: 6px 10px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .quick-jump a:hover {
-            background: #dce8f4;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
         
         .filter-btn {
@@ -172,9 +113,7 @@
             cursor: pointer;
             text-decoration: none;
             color: inherit;
-            display: flex;
-            flex-direction: column;
-            min-height: 170px;
+            display: block;
         }
         
         .recipe-card:hover {
@@ -199,12 +138,8 @@
         }
         
         .recipe-card p {
-            color: #6c7a89;
-            font-size: 15px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            color: #7f8c8d;
+            font-size: 14px;
         }
         
         .section-title {
@@ -253,22 +188,6 @@
             color: #7f8c8d;
             margin-top: 40px;
         }
-
-        .back-to-top {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            border: none;
-            border-radius: 999px;
-            padding: 10px 14px;
-            background: var(--primary);
-            color: #fff;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-            display: none;
-            z-index: 120;
-        }
         
         @media (max-width: 768px) {
             header {
@@ -281,39 +200,6 @@
             
             .recipe-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .search-box {
-                top: 8px;
-                padding: 16px;
-            }
-
-            .filter-buttons {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 4px;
-            }
-
-            .filter-btn {
-                white-space: nowrap;
-                flex: 0 0 auto;
-            }
-
-            .top-controls {
-                align-items: flex-start;
-            }
-
-            .quick-jump {
-                overflow-x: auto;
-                flex-wrap: nowrap;
-                width: 100%;
-                padding-bottom: 4px;
-            }
-
-            .quick-jump a {
-                white-space: nowrap;
-                flex: 0 0 auto;
             }
         }
     </style>
@@ -345,7 +231,6 @@
             >
             <div class="filter-buttons" id="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="favorite">Favorites</button>
                 <button class="filter-btn" data-filter="weeknight">Weeknight / One-Pan</button>
                 <button class="filter-btn" data-filter="seafood">Seafood</button>
                 <button class="filter-btn" data-filter="beef">Beef</button>
@@ -357,62 +242,16 @@
                 <button class="filter-btn" data-filter="bread">Breads</button>
                 <button class="filter-btn" data-filter="side">Sides</button>
                 <button class="filter-btn" data-filter="salad">Salads</button>
-                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                <button class="filter-btn" data-filter="breakfast">Breakfasts</button>
                 <button class="filter-btn" data-filter="spice">Spice Mixes</button>
                 <button class="filter-btn" data-filter="dessert">Desserts</button>
                 <button class="filter-btn" data-filter="cocktail">Cocktails</button>
             </div>
-            <div class="top-controls">
-                <div class="sort-wrap">
-                    <label for="sort-select">Sort:</label>
-                    <select id="sort-select" aria-label="Sort recipes">
-                        <option value="default">Default</option>
-                        <option value="az">A–Z</option>
-                        <option value="za">Z–A</option>
-                    </select>
-                </div>
-                <nav class="quick-jump" aria-label="Quick jump categories">
-                    <a href="#favorites-section">Favorites</a>
-                    <a href="#weeknight-section">Weeknight</a>
-                    <a href="#seafood-section">Seafood</a>
-                    <a href="#beef-section">Beef</a>
-                    <a href="#poultry-section">Poultry</a>
-                    <a href="#pork-section">Pork</a>
-                    <a href="#lamb-section">Lamb</a>
-                    <a href="#pasta-section">Pasta</a>
-                    <a href="#soup-section">Soups</a>
-                    <a href="#side-section">Sides</a>
-                    <a href="#salad-section">Salads</a>
-                    <a href="#dessert-section">Desserts</a>
-                    <a href="#cocktail-section">Cocktails</a>
-                </nav>
-            </div>
-            <div class="results-count" id="results-count">Showing all recipes</div>
         </div>
         
         <div id="recipe-container">
-            <!-- Favorites -->
-            <h2 class="section-title" id="favorites-section">Top Favorites</h2>
-            <div class="recipe-grid" id="favorites-recipes">
-                <a href="Robs-New-Orleans-Gumbo.html" class="recipe-card" data-category="favorite soup seafood">
-                    <span class="category">Favorite</span>
-                    <h3>Rob’s New Orleans Gumbo</h3>
-                    <p>Deep, rich gumbo with chicken, andouille, oysters, and shrimp</p>
-                </a>
-                <a href="Boeuf-Bourguignon.html" class="recipe-card" data-category="favorite beef">
-                    <span class="category">Favorite</span>
-                    <h3>Boeuf Bourguignon</h3>
-                    <p>Classic French braise with deep wine flavor</p>
-                </a>
-                <a href="The-Lobster-Mac-and-Cheese.html" class="recipe-card" data-category="favorite seafood pasta">
-                    <span class="category">Favorite</span>
-                    <h3>Lobster Mac and Cheese</h3>
-                    <p>The one everyone always asks for</p>
-                </a>
-            </div>
-
             <!-- Weeknight / One-Pan -->
-            <h2 class="section-title" id="weeknight-section">Weeknight / One-Pan</h2>
+            <h2 class="section-title">Weeknight / One-Pan</h2>
             <div class="recipe-grid" id="weeknight-recipes">
                 <a href="One-Pan-Pasta.html" class="recipe-card" data-category="weeknight pasta">
                     <span class="category">Weeknight</span>
@@ -432,7 +271,7 @@
             </div>
 
             <!-- Seafood Section -->
-            <h2 class="section-title" id="seafood-section">Seafood Favorites</h2>
+            <h2 class="section-title">Seafood Favorites</h2>
             <div class="recipe-grid" id="seafood-recipes">
                 <!-- Bouillabaisse now listed under Soups &amp; Stews -->
                 <a href="Coquilles-Saint-Jacques.html" class="recipe-card" data-category="seafood">
@@ -483,7 +322,7 @@
             </div>
             
             <!-- Beef -->
-            <h2 class="section-title" id="beef-section">Beef</h2>
+            <h2 class="section-title">Beef</h2>
             <div class="recipe-grid" id="beef-recipes">
                 <a href="Boeuf-Bourguignon.html" class="recipe-card" data-category="beef">
                     <span class="category">Beef</span>
@@ -523,7 +362,7 @@
             </div>
 
             <!-- Poultry -->
-            <h2 class="section-title" id="poultry-section">Poultry</h2>
+            <h2 class="section-title">Poultry</h2>
             <div class="recipe-grid" id="poultry-recipes">
                 <a href="Braised-Bone-in-Chicken-Thighs.html" class="recipe-card" data-category="poultry">
                     <span class="category">Poultry</span>
@@ -543,7 +382,7 @@
             </div>
 
             <!-- Pork -->
-            <h2 class="section-title" id="pork-section">Pork</h2>
+            <h2 class="section-title">Pork</h2>
             <div class="recipe-grid" id="pork-recipes">
                 <a href="Pork-Roast.html" class="recipe-card" data-category="pork">
                     <span class="category">Pork</span>
@@ -553,7 +392,7 @@
             </div>
             
             <!-- Lamb & Middle Eastern -->
-            <h2 class="section-title" id="lamb-section">Lamb & Middle Eastern</h2>
+            <h2 class="section-title">Lamb & Middle Eastern</h2>
             <div class="recipe-grid" id="lamb-recipes">
                 <a href="Easy-Lamb-Tagine.html" class="recipe-card" data-category="lamb">
                     <span class="category">Lamb</span>
@@ -589,7 +428,7 @@
             </div>
 
             <!-- Pasta & Comfort Food -->
-            <h2 class="section-title" id="pasta-section">Pasta &amp; Comfort Food</h2>
+            <h2 class="section-title">Pasta & Comfort Food</h2>
             <div class="recipe-grid" id="comfort-recipes">
                 <a href="Rich-and-Creamy-Macaroni-and-Cheese.html" class="recipe-card" data-category="pasta">
                     <span class="category">Pasta</span>
@@ -607,7 +446,7 @@
                     <p>Sharp, briny, puttanesca-style linguine</p>
                 </a>
                 <a href="Stop-Buying-Jarred-Tomato-Sauce.html" class="recipe-card" data-category="pasta sauce">
-                    <span class="category">Pasta</span>
+                    <span class="category">Sauce</span>
                     <h3>Homemade Tomato Sauce</h3>
                     <p>Fast, bright pantry tomato sauce</p>
                 </a>
@@ -616,10 +455,15 @@
                     <h3>Eggplant Parmesan Casserole</h3>
                     <p>Hearty vegetarian comfort food</p>
                 </a>
+                <a href="Ratatouille.html" class="recipe-card" data-category="side">
+                    <span class="category">Side</span>
+                    <h3>Ratatouille</h3>
+                    <p>Provençal vegetable stew</p>
+                </a>
             </div>
 
             <!-- Spice Mixes -->
-            <h2 class="section-title" id="spice-section">Spice Mixes</h2>
+            <h2 class="section-title">Spice Mixes</h2>
             <div class="recipe-grid" id="spice-recipes">
                 <a href="Ras-el-Hanout-Spice-Mix.html" class="recipe-card" data-category="spice lamb">
                     <span class="category">Spice Blend</span>
@@ -634,7 +478,7 @@
             </div>
             
             <!-- Soups & Stews -->
-            <h2 class="section-title" id="soup-section">Soups &amp; Stews</h2>
+            <h2 class="section-title">Soups &amp; Stews</h2>
             <div class="recipe-grid" id="soup-recipes">
                 <a href="Leek-and-Potato-Soup-Two-Ways.html" class="recipe-card" data-category="soup">
                     <span class="category">Soup</span>
@@ -669,7 +513,7 @@
             </div>
             
             <!-- Breads -->
-            <h2 class="section-title" id="bread-section">Breads</h2>
+            <h2 class="section-title">Breads</h2>
             <div class="recipe-grid" id="bread-recipes">
                 <a href="Corn-Tortillas.html" class="recipe-card" data-category="bread">
                     <span class="category">Bread</span>
@@ -689,7 +533,7 @@
             </div>
 
             <!-- Sides -->
-            <h2 class="section-title" id="side-section">Sides</h2>
+            <h2 class="section-title">Sides</h2>
             <div class="recipe-grid" id="side-recipes">
                 <a href="Provencal-Tomatoes.html" class="recipe-card" data-category="side">
                     <span class="category">Side</span>
@@ -711,15 +555,10 @@
                     <h3>Saffron Couscous</h3>
                     <p>Golden saffron-steeped couscous, ready in 15 minutes</p>
                 </a>
-                <a href="Ratatouille.html" class="recipe-card" data-category="side">
-                    <span class="category">Side</span>
-                    <h3>Ratatouille</h3>
-                    <p>Provençal vegetable stew</p>
-                </a>
             </div>
 
             <!-- Salads -->
-            <h2 class="section-title" id="salad-section">Salads</h2>
+            <h2 class="section-title">Salads</h2>
             <div class="recipe-grid" id="salad-recipes">
                 <a href="Salade-Nicoise.html" class="recipe-card" data-category="salad">
                     <span class="category">Salad</span>
@@ -738,8 +577,8 @@
                 </a>
             </div>
 
-            <!-- Breakfast -->
-            <h2 class="section-title" id="breakfast-section">Breakfast</h2>
+            <!-- Breakfasts -->
+            <h2 class="section-title">Breakfasts</h2>
             <div class="recipe-grid" id="breakfast-recipes">
                 <a href="Eggs-in-the-Hole.html" class="recipe-card" data-category="breakfast">
                     <span class="category">Breakfast</span>
@@ -749,7 +588,7 @@
             </div>
 
             <!-- Desserts -->
-            <h2 class="section-title" id="dessert-section">Desserts</h2>
+            <h2 class="section-title">Desserts</h2>
             <div class="recipe-grid" id="dessert-recipes">
                 <a href="Chantilly-Aux-Framboises.html" class="recipe-card" data-category="dessert">
                     <span class="category">Dessert</span>
@@ -764,7 +603,7 @@
             </div>
 
             <!-- Cocktails -->
-            <h2 class="section-title" id="cocktail-section">Cocktails</h2>
+            <h2 class="section-title">Cocktails</h2>
             <div class="recipe-grid" id="cocktail-recipes">
                 <a href="Tequila-Old-Fashioned.html" class="recipe-card" data-category="cocktail">
                     <span class="category">Cocktail</span>
@@ -779,8 +618,6 @@
         <div id="no-results" class="no-results" style="display: none;">
             <p>No recipes found. Try a different search term or filter.</p>
         </div>
-
-        <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑ Top</button>
         
         <footer>
             <p>Recipe Collection • Last Updated: <span id="last-updated"></span></p>
@@ -792,31 +629,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             const recipeCards = document.querySelectorAll('.recipe-card');
             const categories = new Set();
-            const uniqueRecipes = new Set();
             
             recipeCards.forEach(card => {
                 const cats = card.getAttribute('data-category').split(' ');
                 cats.forEach(cat => categories.add(cat));
-                uniqueRecipes.add(card.getAttribute('href'));
             });
             
-            document.getElementById('total-recipes').textContent = uniqueRecipes.size;
+            document.getElementById('total-recipes').textContent = recipeCards.length;
             document.getElementById('total-categories').textContent = categories.size;
-
-            const lastModified = document.lastModified ? new Date(document.lastModified) : null;
-            document.getElementById('last-updated').textContent = lastModified && !isNaN(lastModified)
-                ? lastModified.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                })
-                : 'Unknown';
+            document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
             
             const searchInput = document.getElementById('search-input');
             const filterButtons = document.querySelectorAll('.filter-btn');
-            const resultsCount = document.getElementById('results-count');
-            const backToTopBtn = document.getElementById('back-to-top');
-            const sortSelect = document.getElementById('sort-select');
             let activeFilter = 'all';
             
             searchInput.addEventListener('input', filterRecipes);
@@ -829,50 +657,11 @@
                     filterRecipes();
                 });
             });
-
-            document.querySelectorAll('.recipe-grid').forEach(grid => {
-                Array.from(grid.querySelectorAll('.recipe-card')).forEach((card, idx) => {
-                    card.dataset.defaultIndex = String(idx);
-                });
-            });
-
-            sortSelect.addEventListener('change', () => {
-                applySort();
-                filterRecipes();
-            });
-
-            window.addEventListener('scroll', () => {
-                backToTopBtn.style.display = window.scrollY > 500 ? 'block' : 'none';
-            });
-
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            applySort();
-            filterRecipes();
-
-            function applySort() {
-                const mode = sortSelect.value;
-                document.querySelectorAll('.recipe-grid').forEach(grid => {
-                    const cards = Array.from(grid.querySelectorAll('.recipe-card'));
-                    cards.sort((a, b) => {
-                        const aTitle = a.querySelector('h3').textContent.trim().toLowerCase();
-                        const bTitle = b.querySelector('h3').textContent.trim().toLowerCase();
-
-                        if (mode === 'az') return aTitle.localeCompare(bTitle);
-                        if (mode === 'za') return bTitle.localeCompare(aTitle);
-
-                        return Number(a.dataset.defaultIndex) - Number(b.dataset.defaultIndex);
-                    });
-                    cards.forEach(card => grid.appendChild(card));
-                });
-            }
             
             function filterRecipes() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const cards = document.querySelectorAll('.recipe-card');
-                const visibleRecipes = new Set();
+                let visibleCount = 0;
                 
                 cards.forEach(card => {
                     const title = card.querySelector('h3').textContent.toLowerCase();
@@ -890,13 +679,11 @@
                     
                     if (matchesSearch && matchesFilter) {
                         card.style.display = 'block';
-                        visibleRecipes.add(card.getAttribute('href'));
+                        visibleCount++;
                     } else {
                         card.style.display = 'none';
                     }
                 });
-
-                const visibleCount = visibleRecipes.size;
                 
                 document.getElementById('no-results').style.display = visibleCount === 0 ? 'block' : 'none';
                 
@@ -906,13 +693,6 @@
                         .filter(card => card.style.display !== 'none');
                     title.style.display = visibleCards.length > 0 ? 'block' : 'none';
                 });
-
-                if (activeFilter === 'all' && !searchTerm) {
-                    resultsCount.textContent = `Showing all ${visibleCount} recipes`;
-                } else {
-                    const filterLabel = activeFilter === 'all' ? 'all categories' : activeFilter;
-                    resultsCount.textContent = `Showing ${visibleCount} recipe${visibleCount === 1 ? '' : 's'} (${filterLabel})`;
-                }
             }
         });
     </script>

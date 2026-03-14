@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Easy-Meatloaf - Rob's Recipe Collection</title>
   
-  
   <style>
     :root {
       --primary: #2B547E;
@@ -20,244 +19,70 @@
       --note-border: #e0be57;
       --note-text: #6f5b15;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      background:
-        radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%),
-        #f7f3eb;
+      background: radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%), #f7f3eb;
       padding: 20px;
     }
-
     .page { max-width: 1020px; margin: 0 auto; }
-
-    .top-actions,
-    .bottom-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
+    .top-actions, .bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
     .top-actions { margin-bottom: 22px; }
     .bottom-actions { justify-content: center; margin-top: 30px; }
-
     .action-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--primary);
-      color: #fff;
-      padding: 11px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.10);
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.10); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-
-    .action-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 14px rgba(0,0,0,0.14);
-      background: #23476b;
-    }
-
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 14px rgba(0,0,0,0.14); background: #23476b; }
     .recipe-card {
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(43,84,126,0.16);
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(43,84,126,0.16); border-radius: 18px;
+      padding: 32px; box-shadow: 0 12px 28px rgba(0,0,0,0.08); backdrop-filter: blur(2px);
     }
-
     .hero {
-      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94));
-      color: #fff;
-      border-radius: 16px;
-      padding: 34px 30px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-      margin-bottom: 24px;
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)); color: #fff;
+      border-radius: 16px; padding: 34px 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.12); margin-bottom: 24px;
     }
-
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      display: inline-block; margin-bottom: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     }
-
-    .hero h1 {
-      font-size: 2.55em;
-      line-height: 1.12;
-      margin-bottom: 14px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.22);
-      border: none;
-      padding-bottom: 0;
-      color: #fff;
-    }
-
-    .hero-copy {
-      max-width: 700px;
-      font-size: 1.05em;
-      opacity: 0.98;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.18);
-      margin-bottom: 0;
-    }
-
-    .meta-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 18px 0 0;
-    }
-
+    .hero h1 { font-size: 2.55em; line-height: 1.12; margin-bottom: 14px; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+    .hero-copy { max-width: 700px; font-size: 1.05em; opacity: 0.98; text-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
     .meta-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.24);
-      color: #fff;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
     }
-
-    .stats {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin: 0 0 24px;
+    .stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 0 0 24px; }
+    .stat-box { background: rgba(43,84,126,0.12); border: 1px solid rgba(43,84,126,0.24); border-radius: 12px; padding: 14px 18px; min-width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .stat-label { color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .stat-value { color: var(--primary); font-size: 1.15em; font-weight: 800; }
+    .lead, .quote, .section-card, .rule, .tip, .recipe-details, .description, .components, .ingredients, .instructions {
+      border-radius: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.06);
     }
-
-    .stat-box {
-      background: rgba(43, 84, 126, 0.12);
-      border: 1px solid rgba(43, 84, 126, 0.24);
-      border-radius: 12px;
-      padding: 14px 18px;
-      min-width: 150px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    .lead, .quote, .rule, .tip, .recipe-details, .description, .components {
+      background: var(--paper); border: 1px solid var(--paper-border); padding: 20px 22px; margin: 0 0 22px;
     }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 4px;
-    }
-
-    .stat-value {
-      color: var(--primary);
-      font-size: 1.15em;
-      font-weight: 800;
-    }
-
-    .lead,
-    .quote,
-    .section-card {
-      border-radius: 14px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-    }
-
-    .lead,
-    .quote {
-      background: var(--paper);
-      border: 1px solid var(--paper-border);
-      padding: 20px 22px;
-      margin: 0 0 22px;
-    }
-
     .lead { font-size: 1.03em; }
     .quote { margin-top: 26px; }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    .section-card {
-      background: rgba(255,255,255,0.56);
-      border: 1px solid rgba(43, 84, 126, 0.18);
-      padding: 22px 22px 18px;
-    }
-
-    h1 {
-      color: var(--primary);
-      font-size: 2.25em;
-      line-height: 1.15;
-      margin-bottom: 10px;
-      border-bottom: 3px solid var(--primary);
-      padding-bottom: 14px;
-    }
-
-    .subtitle {
-      color: var(--secondary);
-      font-style: italic;
-      margin-bottom: 12px;
-      font-size: 1.02em;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    h2 {
-      color: var(--secondary);
-      font-size: 1.52em;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 3px solid var(--primary);
-    }
-
-    h3 {
-      color: var(--secondary);
-      font-size: 1.14em;
-      margin: 18px 0 10px;
-    }
-
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .section-card { background: rgba(255,255,255,0.56); border: 1px solid rgba(43,84,126,0.18); padding: 22px 22px 18px; }
+    h2 { color: var(--secondary); font-size: 1.52em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--primary); }
+    h3 { color: var(--secondary); font-size: 1.14em; margin: 18px 0 10px; }
     p { margin-bottom: 12px; }
     ul, ol { margin-left: 24px; margin-bottom: 14px; }
     li { margin-bottom: 8px; }
     li ul, li ol { margin-top: 8px; }
-
-    img {
-      max-width: 100%;
-      border-radius: 14px;
-      margin: 10px 0 20px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-      display: block;
-    }
-
+    img { max-width: 100%; border-radius: 14px; margin: 10px 0 20px; box-shadow: 0 6px 14px rgba(0,0,0,0.12); display: block; }
     .note {
-      background: var(--note-bg);
-      border-left: 4px solid var(--note-border);
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin: 15px 0 0;
-      font-size: 0.96em;
-      color: var(--note-text);
+      background: var(--note-bg); border-left: 4px solid var(--note-border); border-radius: 10px; padding: 12px 16px;
+      margin: 15px 0 0; font-size: 0.96em; color: var(--note-text);
     }
-
     @media (max-width: 768px) {
       body { padding: 14px; }
       .recipe-card { padding: 18px; border-radius: 14px; }
@@ -265,11 +90,10 @@
       .hero h1 { font-size: 1.95em; }
       .action-btn { width: 100%; }
     }
-
     @media print {
       .top-actions, .bottom-actions { display: none; }
       body { padding: 0; background: #fff; }
-      .recipe-card, .hero, .lead, .quote, .section-card, .stat-box { box-shadow: none; }
+      .recipe-card, .hero, .lead, .quote, .section-card, .stat-box, .rule, .tip, .recipe-details, .description, .components { box-shadow: none; }
       .recipe-card { border: none; background: #fff; padding: 0; }
     }
   </style>
@@ -282,8 +106,22 @@
     </div>
 
     <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Beef</div>
+        <h1>Easy-Meatloaf</h1>
+        <p class="hero-copy">A favorite from Rob's recipe collection.</p>
+        <div class="meta-row">
+          <span class="meta-pill">Beef</span>
+        </div>
       </section>
 
+      
+
+      
+
+      
+
+      <div class="content-grid">
         <section class="section-card">
         <h2>Ingredients</h2>
 
@@ -303,6 +141,9 @@
       <li>Brown sugar</li>
       <li>Mustard</li>
     </ul>
+      </section>
+
+        <section class="section-card">
       </section>
 
         <section class="section-card">
@@ -329,22 +170,23 @@
       </section>
 
         <section class="section-card">
+      </section>
+
+        <section class="section-card">
         <h2>Serving & Storage</h2>
 
     <p>Let the meatloaf rest briefly before slicing. Serve with mashed potatoes, peas, or any of your usual sides.</p>
+      </section>
 
-    <div class="quote">
+        <div class="quote">
       <strong>Leftovers:</strong> Wrap tightly and refrigerate for 3–4 days, or double-wrap and freeze for 3–4 months. Cold slices make great meatloaf sandwiches.
     </div>
-  </div>
-      </section>
       </div>
     </div>
 
     <div class="bottom-actions">
       <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
     </div>
-  </div>
   </div>
 </body>
 </html>

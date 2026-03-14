@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Braised Beef Chili - Rob's Recipe Collection</title>
   
+  
   <style>
     :root {
       --primary: #2B547E;
@@ -26,14 +27,13 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      background: #f7f3eb;
+      background:
+        radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%),
+        #f7f3eb;
       padding: 20px;
     }
 
-    .page {
-      max-width: 980px;
-      margin: 0 auto;
-    }
+    .page { max-width: 1020px; margin: 0 auto; }
 
     .top-actions,
     .bottom-actions {
@@ -44,7 +44,7 @@
     }
 
     .top-actions { margin-bottom: 22px; }
-    .bottom-actions { justify-content: center; margin-top: 28px; }
+    .bottom-actions { justify-content: center; margin-top: 30px; }
 
     .action-btn {
       display: inline-flex;
@@ -69,12 +69,133 @@
     }
 
     .recipe-card {
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.78);
       border: 1px solid rgba(43,84,126,0.16);
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       backdrop-filter: blur(2px);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94));
+      color: #fff;
+      border-radius: 16px;
+      padding: 34px 30px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 2.55em;
+      line-height: 1.12;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.22);
+      border: none;
+      padding-bottom: 0;
+      color: #fff;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      font-size: 1.05em;
+      opacity: 0.98;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+      margin-bottom: 0;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 18px 0 0;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .stats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 0 0 24px;
+    }
+
+    .stat-box {
+      background: rgba(43, 84, 126, 0.12);
+      border: 1px solid rgba(43, 84, 126, 0.24);
+      border-radius: 12px;
+      padding: 14px 18px;
+      min-width: 150px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      color: var(--primary);
+      font-size: 1.15em;
+      font-weight: 800;
+    }
+
+    .lead,
+    .quote,
+    .section-card {
+      border-radius: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .lead,
+    .quote {
+      background: var(--paper);
+      border: 1px solid var(--paper-border);
+      padding: 20px 22px;
+      margin: 0 0 22px;
+    }
+
+    .lead { font-size: 1.03em; }
+    .quote { margin-top: 26px; }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.56);
+      border: 1px solid rgba(43, 84, 126, 0.18);
+      padding: 22px 22px 18px;
     }
 
     h1 {
@@ -100,30 +221,10 @@
       font-weight: 600;
     }
 
-    .intro,
-    .quote {
-      background: var(--paper);
-      border: 1px solid var(--paper-border);
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-      padding: 18px 20px;
-      margin: 18px 0 22px;
-    }
-
-    .note {
-      background: var(--note-bg);
-      border-left: 4px solid var(--note-border);
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin: 15px 0;
-      font-size: 0.96em;
-      color: var(--note-text);
-    }
-
     h2 {
       color: var(--secondary);
-      font-size: 1.5em;
-      margin: 28px 0 12px;
+      font-size: 1.52em;
+      margin-bottom: 12px;
       padding-bottom: 8px;
       border-bottom: 3px solid var(--primary);
     }
@@ -147,38 +248,72 @@
       display: block;
     }
 
+    .note {
+      background: var(--note-bg);
+      border-left: 4px solid var(--note-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 15px 0 0;
+      font-size: 0.96em;
+      color: var(--note-text);
+    }
+
     @media (max-width: 768px) {
       body { padding: 14px; }
-      .recipe-card { padding: 20px; border-radius: 14px; }
-      h1 { font-size: 1.85em; }
-      .top-actions, .bottom-actions { gap: 10px; }
+      .recipe-card { padding: 18px; border-radius: 14px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 1.95em; }
       .action-btn { width: 100%; }
     }
 
     @media print {
       .top-actions, .bottom-actions { display: none; }
       body { padding: 0; background: #fff; }
-      .recipe-card { box-shadow: none; border: none; background: #fff; padding: 0; }
-      .intro, .quote, .note, img { box-shadow: none; }
+      .recipe-card, .hero, .lead, .quote, .section-card, .stat-box { box-shadow: none; }
+      .recipe-card { border: none; background: #fff; padding: 0; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="top-actions">
+    
+
+    <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Recipe</div>
+        <h1>Braised Beef Chili</h1>
+        <p class="hero-copy">
+      This chili leans on collagen and gelatin from long-braised chuck instead of flour or starch. Coffee deepens the beefiness and the chiles' earthy, smoky flavors without making the chili taste like coffee. It’s even better the next day.
+    </p>
+        <div class="meta-row">
+          <span class="meta-pill">Serves 3–4</span>
+          <span class="meta-pill">Slow-braised chuck built on collagen, not shortcuts</span>
+        </div>
+      </section>
+
+      <div class="stats">
+        <div class="stat-box"><div class="stat-label">Category</div><div class="stat-value">Serves 3–4</div></div>
+        <div class="stat-box"><div class="stat-label">Details</div><div class="stat-value">Slow-braised chuck built on collagen, not shortcuts</div></div>
+      </div>
+
+      <div class="lead">
+      This chili leans on collagen and gelatin from long-braised chuck instead of flour or starch. Coffee deepens the beefiness and the chiles' earthy, smoky flavors without making the chili taste like coffee. It’s even better the next day.
+    </div>
+
+      
+
+      <div class="content-grid">
+        <section class="section-card">
+        <div class="top-actions">
       <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
       <a href="Braised-Beef-Chili-Shopping.html" class="action-btn">📝 Shopping List</a>
     </div>
 
     <div class="recipe-card">
-    <h1>Braised Beef Chili</h1>
-    <p class="meta">Serves 3–4 • Slow-braised chuck built on collagen, not shortcuts</p>
+      </section>
 
-    <div class="intro">
-      This chili leans on collagen and gelatin from long-braised chuck instead of flour or starch. Coffee deepens the beefiness and the chiles' earthy, smoky flavors without making the chili taste like coffee. It’s even better the next day.
-    </div>
-
-    <h2>Ingredients</h2>
+        <section class="section-card">
+        <h2>Ingredients</h2>
 
     <h3>Beef</h3>
     <ul>
@@ -217,8 +352,10 @@
       <li>Kosher salt, to taste</li>
       <li>Optional: 1 can kidney or pinto beans, rinsed (add last 30 minutes)</li>
     </ul>
+      </section>
 
-    <h2>Method</h2>
+        <section class="section-card">
+        <h2>Method</h2>
 
     <h3>1. Season & sear the beef</h3>
     <ol>
@@ -261,8 +398,10 @@
       <li>Add vinegar or lime juice to brighten.</li>
       <li>Remove from heat and let rest 20–30 minutes before serving. It’s even better the next day.</li>
     </ol>
+      </section>
 
-    <h2>Make It Your Own</h2>
+        <section class="section-card">
+        <h2>Make It Your Own</h2>
 
     <h3>Chile profile</h3>
     <ul>
@@ -304,7 +443,13 @@
 
     <p style="margin-top:20px; font-style:italic; color:var(--primary); text-align:center;">Taste, adjust, and trust time – that’s how the best versions are made.</p>
   </div>
-  <div class="bottom-actions"><a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a></div>
+      </section>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+    </div>
   </div>
 </body>
 </html>

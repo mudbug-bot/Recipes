@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pork-Roast - Rob's Recipe Collection</title>
-  
   <style>
     :root {
       --primary: #2B547E;
@@ -20,18 +19,24 @@
       --note-text: #6f5b15;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      background: #f7f3eb;
+      background:
+        radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%),
+        #f7f3eb;
       padding: 20px;
     }
 
     .page {
-      max-width: 980px;
+      max-width: 1020px;
       margin: 0 auto;
     }
 
@@ -43,8 +48,14 @@
       align-items: center;
     }
 
-    .top-actions { margin-bottom: 22px; }
-    .bottom-actions { justify-content: center; margin-top: 28px; }
+    .top-actions {
+      margin-bottom: 22px;
+    }
+
+    .bottom-actions {
+      justify-content: center;
+      margin-top: 30px;
+    }
 
     .action-btn {
       display: inline-flex;
@@ -69,61 +80,144 @@
     }
 
     .recipe-card {
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.78);
       border: 1px solid rgba(43,84,126,0.16);
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       backdrop-filter: blur(2px);
     }
 
-    h1 {
-      color: var(--primary);
-      font-size: 2.25em;
-      line-height: 1.15;
-      margin-bottom: 10px;
-      border-bottom: 3px solid var(--primary);
-      padding-bottom: 14px;
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)),
+        url('Pork-Roast.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-radius: 16px;
+      padding: 34px 30px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      margin-bottom: 24px;
     }
 
-    .subtitle {
-      color: var(--secondary);
-      font-style: italic;
+    .eyebrow {
+      display: inline-block;
       margin-bottom: 12px;
-      font-size: 1.02em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .meta {
+    .hero h1 {
+      font-size: 2.55em;
+      line-height: 1.12;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.22);
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      font-size: 1.05em;
+      opacity: 0.98;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 18px 0 0;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .stats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 0 0 24px;
+    }
+
+    .stat-box {
+      background: rgba(43, 84, 126, 0.12);
+      border: 1px solid rgba(43, 84, 126, 0.24);
+      border-radius: 12px;
+      padding: 14px 18px;
+      min-width: 150px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .stat-label {
       color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 20px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
     }
 
-    .intro,
+    .stat-value {
+      color: var(--primary);
+      font-size: 1.15em;
+      font-weight: 800;
+    }
+
+    .lead,
+    .quote,
+    .section-card {
+      border-radius: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .lead,
     .quote {
       background: var(--paper);
       border: 1px solid var(--paper-border);
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-      padding: 18px 20px;
-      margin: 18px 0 22px;
+      padding: 20px 22px;
+      margin: 0 0 22px;
     }
 
-    .note {
-      background: var(--note-bg);
-      border-left: 4px solid var(--note-border);
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin: 15px 0;
-      font-size: 0.96em;
-      color: var(--note-text);
+    .lead {
+      font-size: 1.03em;
+    }
+
+    .quote {
+      margin-top: 26px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.56);
+      border: 1px solid rgba(43, 84, 126, 0.18);
+      padding: 22px 22px 18px;
     }
 
     h2 {
       color: var(--secondary);
-      font-size: 1.5em;
-      margin: 28px 0 12px;
+      font-size: 1.52em;
+      margin-bottom: 12px;
       padding-bottom: 8px;
       border-bottom: 3px solid var(--primary);
     }
@@ -134,121 +228,187 @@
       margin: 18px 0 10px;
     }
 
-    p { margin-bottom: 12px; }
-    ul, ol { margin-left: 24px; margin-bottom: 14px; }
-    li { margin-bottom: 8px; }
-    li ul, li ol { margin-top: 8px; }
+    p {
+      margin-bottom: 12px;
+    }
 
-    img {
-      max-width: 100%;
-      border-radius: 14px;
-      margin: 10px 0 20px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-      display: block;
+    ul,
+    ol {
+      margin-left: 24px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .ingredients-list li {
+      padding-left: 2px;
+    }
+
+    .note {
+      background: var(--note-bg);
+      border-left: 4px solid var(--note-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 15px 0 0;
+      font-size: 0.96em;
+      color: var(--note-text);
     }
 
     @media (max-width: 768px) {
-      body { padding: 14px; }
-      .recipe-card { padding: 20px; border-radius: 14px; }
-      h1 { font-size: 1.85em; }
-      .top-actions, .bottom-actions { gap: 10px; }
-      .action-btn { width: 100%; }
+      body {
+        padding: 14px;
+      }
+
+      .recipe-card {
+        padding: 18px;
+        border-radius: 14px;
+      }
+
+      .hero {
+        padding: 24px 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.95em;
+      }
+
+      .action-btn {
+        width: 100%;
+      }
     }
 
     @media print {
-      .top-actions, .bottom-actions { display: none; }
-      body { padding: 0; background: #fff; }
-      .recipe-card { box-shadow: none; border: none; background: #fff; padding: 0; }
-      .intro, .quote, .note, img { box-shadow: none; }
+      .top-actions,
+      .bottom-actions {
+        display: none;
+      }
+
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .recipe-card,
+      .hero,
+      .lead,
+      .quote,
+      .section-card,
+      .stat-box {
+        box-shadow: none;
+      }
+
+      .recipe-card {
+        border: none;
+        background: #fff;
+        padding: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="page">
     <div class="top-actions">
       <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
       <a href="Pork-Roast-Shopping.html" class="action-btn">📝 Shopping List</a>
     </div>
 
-    <div class="recipe-shell">
+    <div class="recipe-card">
       <section class="hero">
+        <div class="eyebrow">Method Guide</div>
         <h1>The Only Pork Roast Guide You&apos;ll Ever Need</h1>
+        <p class="hero-copy">Salt it early, cook it slow, finish it loud. This is the version that turns pork loin from a careful obligation into an actual centerpiece.</p>
         <div class="meta-row">
           <span class="meta-pill">Pork-Roast</span>
           <span class="meta-pill">Pork Loin</span>
-          <span class="meta-pill">Method Guide</span>
+          <span class="meta-pill">Classic Technique</span>
         </div>
       </section>
 
-      <img src="Pork-Roast.jpg" alt="Pork Roast" class="hero-image" />
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-label">Best For</div>
+          <div class="stat-value">Centerpiece Dinner</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Method</div>
+          <div class="stat-value">Low Then High Heat</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Key Move</div>
+          <div class="stat-value">Dry Brine First</div>
+        </div>
+      </div>
 
-      <div class="intro">
+      <div class="lead">
         Pork gets a bad reputation mostly because people rush it. This method is about three things: salt it early, cook it slow, finish it loud. Do that and pork loin goes from “safe” food to centerpiece.
       </div>
 
-      <section class="section-card">
-        <h2>The Salt Step (Dry Brine)</h2>
-        <p>Pre-salting (dry brining) does more than season the surface. It pulls a little moisture out, dissolves, and then is reabsorbed, changing how the meat behaves as it cooks.</p>
-        <ul>
-          <li>Seasons the meat from the inside</li>
-          <li>Improves moisture retention</li>
-          <li>Makes the pork more tender</li>
-          <li>Reduces moisture loss during cooking</li>
-          <li>Helps the surface dry for better browning</li>
-        </ul>
+      <div class="content-grid">
+        <section class="section-card">
+          <h2>The Salt Step (Dry Brine)</h2>
+          <p>Pre-salting (dry brining) does more than season the surface. It pulls a little moisture out, dissolves, and then is reabsorbed, changing how the meat behaves as it cooks.</p>
+          <ul>
+            <li>Seasons the meat from the inside</li>
+            <li>Improves moisture retention</li>
+            <li>Makes the pork more tender</li>
+            <li>Reduces moisture loss during cooking</li>
+            <li>Helps the surface dry for better browning</li>
+          </ul>
 
-        <h3>How to do it</h3>
-        <ol>
-          <li>Salt the pork loin roast generously on all sides.</li>
-          <li>Place on a rack or plate, uncovered, in the fridge for at least 12 hours and up to 24.</li>
-          <li>If you only have an hour, salt anyway—some time is better than none.</li>
-        </ol>
-      </section>
+          <h3>How to do it</h3>
+          <ol>
+            <li>Salt the pork loin roast generously on all sides.</li>
+            <li>Place on a rack or plate, uncovered, in the fridge for at least 12 hours and up to 24.</li>
+            <li>If you only have an hour, salt anyway—some time is better than none.</li>
+          </ol>
+        </section>
 
-      <section class="section-card">
-        <h2>The Cook Step (Low and Steady)</h2>
-        <p>Pork doesn&apos;t like temperature shock. Starting screaming hot tightens muscle fibers and squeezes out moisture. Low, steady heat cooks evenly from edge to center.</p>
+        <section class="section-card">
+          <h2>The Cook Step (Low and Steady)</h2>
+          <p>Pork doesn&apos;t like temperature shock. Starting screaming hot tightens muscle fibers and squeezes out moisture. Low, steady heat cooks evenly from edge to center.</p>
 
-        <h3>Roast</h3>
-        <ol>
-          <li>Heat the oven to 300–325°F.</li>
-          <li>Roast the pork loin on a rack in a roasting pan.</li>
-          <li>Cook until the internal temperature reaches 135–140°F.</li>
-          <li>Don&apos;t rush, and don&apos;t constantly open the oven.</li>
-        </ol>
-      </section>
+          <h3>Roast</h3>
+          <ol>
+            <li>Heat the oven to 300–325°F.</li>
+            <li>Roast the pork loin on a rack in a roasting pan.</li>
+            <li>Cook until the internal temperature reaches 135–140°F.</li>
+            <li>Don&apos;t rush, and don&apos;t constantly open the oven.</li>
+          </ol>
+        </section>
 
-      <section class="section-card">
-        <h2>The Finish Step (High-Heat Crust)</h2>
-        <p>Once the pork is cooked through, you earn your crust.</p>
-        <ol>
-          <li>Pull the roast out and increase the oven to 500°F.</li>
-          <li>Let the pork rest briefly while the oven heats.</li>
-          <li>Brush with glaze (see below) and return to the oven just long enough to brown and set the exterior.</li>
-        </ol>
-      </section>
+        <section class="section-card">
+          <h2>The Finish Step (High-Heat Crust)</h2>
+          <p>Once the pork is cooked through, you earn your crust.</p>
+          <ol>
+            <li>Pull the roast out and increase the oven to 500°F.</li>
+            <li>Let the pork rest briefly while the oven heats.</li>
+            <li>Brush with glaze (see below) and return to the oven just long enough to brown and set the exterior.</li>
+          </ol>
+        </section>
 
-      <section class="section-card">
-        <h2>Quick Pork Roast Glaze</h2>
-        <ul>
-          <li>3 tbsp honey</li>
-          <li>2 tbsp Dijon mustard</li>
-          <li>2 tbsp apple cider vinegar</li>
-          <li>1 tbsp soy sauce or Worcestershire</li>
-          <li>Fresh cracked black pepper</li>
-        </ul>
-        <p class="note">Warm gently and brush over the roast during the final high-heat blast.</p>
-      </section>
+        <section class="section-card">
+          <h2>Quick Pork Roast Glaze</h2>
+          <ul class="ingredients-list">
+            <li>3 tbsp honey</li>
+            <li>2 tbsp Dijon mustard</li>
+            <li>2 tbsp apple cider vinegar</li>
+            <li>1 tbsp soy sauce or Worcestershire</li>
+            <li>Fresh cracked black pepper</li>
+          </ul>
+          <div class="note">Warm gently and brush over the roast during the final high-heat blast.</div>
+        </section>
 
-      <section class="section-card">
-        <h2>The Rest</h2>
-        <ol>
-          <li>After the final sear, let the pork rest 15–20 minutes.</li>
-          <li>This allows juices to redistribute so they stay in the meat, not on the cutting board.</li>
-          <li>Slice thick and serve.</li>
-        </ol>
-      </section>
+        <section class="section-card">
+          <h2>The Rest</h2>
+          <ol>
+            <li>After the final sear, let the pork rest 15–20 minutes.</li>
+            <li>This allows juices to redistribute so they stay in the meat, not on the cutting board.</li>
+            <li>Slice thick and serve.</li>
+          </ol>
+        </section>
+      </div>
 
       <div class="quote">
         <strong>Summary:</strong> Salt early, cook low and steady, then finish hot with a simple glaze. It&apos;s not complicated, it&apos;s just good cooking—and once you get the feel for it, pork roast becomes one of the most forgiving centerpieces you can make.
@@ -258,7 +418,6 @@
     <div class="bottom-actions">
       <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
     </div>
-  </div>
   </div>
 </body>
 </html>

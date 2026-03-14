@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saffron-Garlic-Shrimp - Rob's Recipe Collection</title>
-  
-  
   <style>
     :root {
       --primary: #2B547E;
@@ -21,7 +19,11 @@
       --note-text: #6f5b15;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -33,7 +35,10 @@
       padding: 20px;
     }
 
-    .page { max-width: 1020px; margin: 0 auto; }
+    .page {
+      max-width: 1020px;
+      margin: 0 auto;
+    }
 
     .top-actions,
     .bottom-actions {
@@ -43,8 +48,14 @@
       align-items: center;
     }
 
-    .top-actions { margin-bottom: 22px; }
-    .bottom-actions { justify-content: center; margin-top: 30px; }
+    .top-actions {
+      margin-bottom: 22px;
+    }
+
+    .bottom-actions {
+      justify-content: center;
+      margin-top: 30px;
+    }
 
     .action-btn {
       display: inline-flex;
@@ -104,9 +115,6 @@
       line-height: 1.12;
       margin-bottom: 14px;
       text-shadow: 0 2px 8px rgba(0,0,0,0.22);
-      border: none;
-      padding-bottom: 0;
-      color: #fff;
     }
 
     .hero-copy {
@@ -114,7 +122,6 @@
       font-size: 1.05em;
       opacity: 0.98;
       text-shadow: 0 1px 4px rgba(0,0,0,0.18);
-      margin-bottom: 0;
     }
 
     .meta-row {
@@ -183,8 +190,13 @@
       margin: 0 0 22px;
     }
 
-    .lead { font-size: 1.03em; }
-    .quote { margin-top: 26px; }
+    .lead {
+      font-size: 1.03em;
+    }
+
+    .quote {
+      margin-top: 26px;
+    }
 
     .content-grid {
       display: grid;
@@ -196,29 +208,6 @@
       background: rgba(255,255,255,0.56);
       border: 1px solid rgba(43, 84, 126, 0.18);
       padding: 22px 22px 18px;
-    }
-
-    h1 {
-      color: var(--primary);
-      font-size: 2.25em;
-      line-height: 1.15;
-      margin-bottom: 10px;
-      border-bottom: 3px solid var(--primary);
-      padding-bottom: 14px;
-    }
-
-    .subtitle {
-      color: var(--secondary);
-      font-style: italic;
-      margin-bottom: 12px;
-      font-size: 1.02em;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 20px;
-      font-weight: 600;
     }
 
     h2 {
@@ -235,17 +224,18 @@
       margin: 18px 0 10px;
     }
 
-    p { margin-bottom: 12px; }
-    ul, ol { margin-left: 24px; margin-bottom: 14px; }
-    li { margin-bottom: 8px; }
-    li ul, li ol { margin-top: 8px; }
+    p {
+      margin-bottom: 12px;
+    }
 
-    img {
-      max-width: 100%;
-      border-radius: 14px;
-      margin: 10px 0 20px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-      display: block;
+    ul,
+    ol {
+      margin-left: 24px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     .note {
@@ -259,32 +249,68 @@
     }
 
     @media (max-width: 768px) {
-      body { padding: 14px; }
-      .recipe-card { padding: 18px; border-radius: 14px; }
-      .hero { padding: 24px 20px; }
-      .hero h1 { font-size: 1.95em; }
-      .action-btn { width: 100%; }
+      body {
+        padding: 14px;
+      }
+
+      .recipe-card {
+        padding: 18px;
+        border-radius: 14px;
+      }
+
+      .hero {
+        padding: 24px 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.95em;
+      }
+
+      .action-btn {
+        width: 100%;
+      }
     }
 
     @media print {
-      .top-actions, .bottom-actions { display: none; }
-      body { padding: 0; background: #fff; }
-      .recipe-card, .hero, .lead, .quote, .section-card, .stat-box { box-shadow: none; }
-      .recipe-card { border: none; background: #fff; padding: 0; }
+      .top-actions,
+      .bottom-actions {
+        display: none;
+      }
+
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .recipe-card,
+      .hero,
+      .lead,
+      .quote,
+      .section-card,
+      .stat-box {
+        box-shadow: none;
+      }
+
+      .recipe-card {
+        border: none;
+        background: #fff;
+        padding: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    
+    <div class="top-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+      <a href="Saffron-Garlic-Shrimp-Shopping.html" class="action-btn">📝 Shopping List</a>
+    </div>
 
     <div class="recipe-card">
       <section class="hero">
         <div class="eyebrow">Seafood</div>
         <h1>Saffron Garlic Shrimp</h1>
-        <p class="hero-copy">
-      Golden threads, bright garlic, and plump shrimp in a silky pan sauce. Fast, elegant, and perfect with crusty bread, pasta, or rice.
-    </p>
+        <p class="hero-copy">Golden threads, bright garlic, and plump shrimp in a silky pan sauce. Fast, elegant, and perfect with crusty bread, pasta, or rice.</p>
         <div class="meta-row">
           <span class="meta-pill">Saffron-Garlic-Shrimp</span>
           <span class="meta-pill">Seafood</span>
@@ -293,67 +319,64 @@
       </section>
 
       <div class="stats">
-        <div class="stat-box"><div class="stat-label">Category</div><div class="stat-value">Saffron-Garlic-Shrimp</div></div>
-        <div class="stat-box"><div class="stat-label">Details</div><div class="stat-value">Seafood</div></div>
-        <div class="stat-box"><div class="stat-label">More</div><div class="stat-value">~15 minutes</div></div>
+        <div class="stat-box">
+          <div class="stat-label">Serves</div>
+          <div class="stat-value">2–3</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Style</div>
+          <div class="stat-value">Fast & Elegant</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Best With</div>
+          <div class="stat-value">Bread, Pasta, Rice</div>
+        </div>
       </div>
 
       <div class="lead">
-      Golden threads, bright garlic, and plump shrimp in a silky pan sauce. Fast, elegant, and perfect with crusty bread, pasta, or rice.
-    </div>
-
-      
+        Golden threads, bright garlic, and plump shrimp in a silky pan sauce. Fast, elegant, and perfect with crusty bread, pasta, or rice.
+      </div>
 
       <div class="content-grid">
         <section class="section-card">
-        <div class="top-actions">
-      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
-      <a href="Saffron-Garlic-Shrimp-Shopping.html" class="action-btn">📝 Shopping List</a>
-    </div>
-
-    <div class="recipe-card">
-      </section>
-
-        <section class="section-card">
-        <h2>Ingredients</h2>
-    <ul>
-      <li>12 jumbo shrimp, peeled &amp; deveined</li>
-      <li>½ tsp saffron threads</li>
-      <li>¼ cup dry white wine (or water)</li>
-      <li>4 garlic cloves, thinly sliced</li>
-      <li>1 shallot, finely diced</li>
-      <li>2 tbsp extra virgin olive oil</li>
-      <li>1 lemon, cut into wedges for serving</li>
-      <li>3 tbsp fresh parsley, chopped</li>
-      <li>Salt &amp; black pepper</li>
-    </ul>
-      </section>
+          <h2>Ingredients</h2>
+          <ul>
+            <li>12 jumbo shrimp, peeled &amp; deveined</li>
+            <li>½ tsp saffron threads</li>
+            <li>¼ cup dry white wine (or water)</li>
+            <li>4 garlic cloves, thinly sliced</li>
+            <li>1 shallot, finely diced</li>
+            <li>2 tbsp extra virgin olive oil</li>
+            <li>1 lemon, cut into wedges for serving</li>
+            <li>3 tbsp fresh parsley, chopped</li>
+            <li>Salt &amp; black pepper</li>
+          </ul>
+        </section>
 
         <section class="section-card">
-        <h2>Instructions</h2>
-    <ol>
-      <li>Heat the wine (or water) until just before boiling, transfer to a bowl, pinch in the saffron threads, and set aside to infuse.</li>
-      <li>Pat the shrimp dry with paper towels, then season with salt and pepper.</li>
-      <li>Heat a pan over medium heat and add the olive oil. After 2 minutes, add the sliced garlic and mix with the oil. 2 minutes later, add the diced shallot, season with salt and pepper, and stir.</li>
-      <li>Add the shrimp seasoned side down. After 1 minute, flip them, then add the saffron-infused liquid and 2 tablespoons of parsley. Give the pan a quick shake.</li>
-      <li>After the shrimp have cooked for a total of 2 minutes, remove them and transfer to a shallow bowl. Continue cooking the sauce for another 2 minutes to let it thicken up, then pour it over the shrimp and sprinkle with the remaining parsley.</li>
-      <li>Serve with lemon wedges on the side, plus crusty bread, pasta, or rice.</li>
-    </ol>
-      </section>
+          <h2>Instructions</h2>
+          <ol>
+            <li>Heat the wine (or water) until just before boiling, transfer to a bowl, pinch in the saffron threads, and set aside to infuse.</li>
+            <li>Pat the shrimp dry with paper towels, then season with salt and pepper.</li>
+            <li>Heat a pan over medium heat and add the olive oil. After 2 minutes, add the sliced garlic and mix with the oil. 2 minutes later, add the diced shallot, season with salt and pepper, and stir.</li>
+            <li>Add the shrimp seasoned side down. After 1 minute, flip them, then add the saffron-infused liquid and 2 tablespoons of parsley. Give the pan a quick shake.</li>
+            <li>After the shrimp have cooked for a total of 2 minutes, remove them and transfer to a shallow bowl. Continue cooking the sauce for another 2 minutes to let it thicken up, then pour it over the shrimp and sprinkle with the remaining parsley.</li>
+            <li>Serve with lemon wedges on the side, plus crusty bread, pasta, or rice.</li>
+          </ol>
+        </section>
 
         <section class="section-card">
-        <h2>Tips</h2>
-    <ul>
-      <li>Use high-quality saffron — it’s the star of the dish and makes a huge difference.</li>
-      <li>Wine adds depth and subtle acidity; water keeps it lighter and lets the saffron shine.</li>
-      <li>Don’t overcook the garlic or it will turn bitter; keep the heat at medium and watch closely.</li>
-    </ul>
+          <h2>Tips</h2>
+          <ul>
+            <li>Use high-quality saffron — it’s the star of the dish and makes a huge difference.</li>
+            <li>Wine adds depth and subtle acidity; water keeps it lighter and lets the saffron shine.</li>
+            <li>Don’t overcook the garlic or it will turn bitter; keep the heat at medium and watch closely.</li>
+          </ul>
+        </section>
+      </div>
 
-    <div class="quote">
-      <strong>Note:</strong> Shrimp go from perfect to rubbery fast. Keep everything ready, move quickly, and pull the shrimp as soon as they’re just cooked through.
-    </div>
-  </div>
-      </section>
+      <div class="quote">
+        <strong>Note:</strong> Shrimp go from perfect to rubbery fast. Keep everything ready, move quickly, and pull the shrimp as soon as they’re just cooked through.
       </div>
     </div>
 

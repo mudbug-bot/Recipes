@@ -860,7 +860,9 @@
                     const grid = title.nextElementSibling;
                     const visibleCards = Array.from(grid.querySelectorAll('.recipe-card'))
                         .filter(card => card.style.display !== 'none');
-                    title.style.display = visibleCards.length > 0 ? 'block' : 'none';
+                    const hasVisible = visibleCards.length > 0;
+                    title.style.display = hasVisible ? 'block' : 'none';
+                    grid.style.display = hasVisible ? 'grid' : 'none';
                 });
 
                 if (activeFilter === 'all' && !searchTerm) {

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BBQ-Ribs - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #2B547E;
+      --secondary: #2c3e50;
+      --accent: #27ae60;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --muted: #6c7a89;
+      --paper: rgba(43, 84, 126, 0.10);
+      --paper-border: rgba(43, 84, 126, 0.28);
+      --note-bg: #fff7db;
+      --note-border: #e0be57;
+      --note-text: #6f5b15;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%), #f7f3eb;
+      padding: 20px;
+    }
+    .page { max-width: 1020px; margin: 0 auto; }
+    .top-actions, .bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .top-actions { margin-bottom: 22px; }
+    .bottom-actions { justify-content: center; margin-top: 30px; }
+    .action-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.10); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 14px rgba(0,0,0,0.14); background: #23476b; }
+    .recipe-card {
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(43,84,126,0.16); border-radius: 18px;
+      padding: 32px; box-shadow: 0 12px 28px rgba(0,0,0,0.08); backdrop-filter: blur(2px);
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)); color: #fff;
+      border-radius: 16px; padding: 34px 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.12); margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 2.55em; line-height: 1.12; margin-bottom: 14px; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+    .hero-copy { max-width: 760px; font-size: 1.05em; opacity: 0.98; text-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+    .meta-pill {
+      display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    }
+    .section-card, .quote { border-radius: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.06); }
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .section-card { background: rgba(255,255,255,0.56); border: 1px solid rgba(43,84,126,0.18); padding: 22px 22px 18px; }
+    h2 { color: var(--secondary); font-size: 1.52em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--primary); }
+    p { margin-bottom: 12px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+    img { max-width: 100%; border-radius: 14px; margin: 10px 0 20px; box-shadow: 0 6px 14px rgba(0,0,0,0.12); display: block; }
+    .quote {
+      background: #fff7db; border-left: 4px solid #e0be57; padding: 16px 18px; color: #6f5b15;
+    }
+    @media (max-width: 768px) {
+      body { padding: 14px; }
+      .recipe-card { padding: 18px; border-radius: 14px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 1.95em; }
+      .action-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+      <a href="BBQ-Ribs-Shopping.html" class="action-btn">📝 Shopping List</a>
+    </div>
+
+    <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Pork</div>
+        <h1>BBQ Ribs</h1>
+        <p class="hero-copy">Sweet South Mississippi-style dry ribs, vinegar-rubbed first, then coated in a bold paprika-garlic spice blend and cooked low and slow over indirect heat. Serve dry with barbecue sauce on the side.</p>
+        <div class="meta-row">
+          <span class="meta-pill">Yield: 6–8 servings</span>
+          <span class="meta-pill">Category: Pork</span>
+          <span class="meta-pill">Method: Indirect Low Heat</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="section-card">
+          <h2>Image Note</h2>
+          <p>Hero image captured from Rob’s provided cookbook photos. If needed, replace with the fully localized file once the image copy step is completed.</p>
+        </section>
+
+        <section class="section-card">
+          <h2>Description</h2>
+          <p>South Mississippi, my part of the country, has many excellent rib joints. Unlike the vinegar-based North Carolina version, our BBQ is sweet—some say it’s all the pine pollen floating around in the air that makes us crave sweet stuff. Serve the ribs dry with a side of sauce. The rub works well for beef ribs, too.</p>
+        </section>
+
+        <section class="section-card">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>3 full racks pork spareribs, 3–4 lbs each (3-inch/down)</li>
+            <li>2 cups white vinegar</li>
+            <li>1/2 cup paprika</li>
+            <li>1/4 cup garlic powder</li>
+            <li>2 Tbl onion powder</li>
+            <li>1 Tbl freshly ground black pepper</li>
+            <li>2 Tbl kosher salt</li>
+            <li>1/4 cup brown sugar</li>
+            <li>1/4 cup sugar</li>
+            <li>1 Tbl Creole Seasoning</li>
+            <li>1 recipe BBQ Sauce, for serving</li>
+          </ul>
+        </section>
+
+        <section class="section-card">
+          <h2>Instructions</h2>
+          <ol>
+            <li>Place the ribs in a large roasting pan or baking dish and pour the vinegar over the ribs.</li>
+            <li>Using your hand, rub all of the ribs with the vinegar and allow them to marinate for 1 hour.</li>
+            <li>Drain the vinegar and dry each rack completely with paper towels.</li>
+            <li>Combine the spices, sugars, and Creole Seasoning and coat the ribs completely with the mixture.</li>
+            <li>Cover and refrigerate overnight.</li>
+            <li>Prepare the grill for indirect low heat.</li>
+            <li>Cook the ribs over indirect low heat for 2 1/2 to 3 hours, or until they begin to pull away from the tips of the bones and the entire rack bends easily when held in the middle with a pair of tongs.</li>
+            <li>Serve the ribs dry with BBQ sauce on the side.</li>
+          </ol>
+        </section>
+
+        <section class="section-card">
+          <h2>Tips</h2>
+          <ul>
+            <li>The rub works well for beef ribs too.</li>
+            <li>Drying the racks thoroughly after the vinegar soak helps the seasoning adhere better.</li>
+            <li>Look for that easy bend in the rack as your doneness cue—not just the clock.</li>
+          </ul>
+        </section>
+
+        <div class="quote">
+          <strong>Note:</strong> This is a dry-style rib recipe. The sauce belongs on the side, not slathered on during the cook.
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+    </div>
+  </div>
+</body>
+</html>

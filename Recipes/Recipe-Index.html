@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rob’s Recipes</title>
+    <title>Rob's Recipes</title>
     <style>
         :root {
             --primary: #2B547E;
@@ -12,13 +12,13 @@
             --light: #ecf0f1;
             --dark: #34495e;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
@@ -26,12 +26,12 @@
             background: #f7f3eb;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         header {
             background-image:
                 linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
@@ -46,20 +46,20 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
         }
-        
+
         header h1 {
             font-size: 3.4em;
             line-height: 1.08;
             margin-bottom: 14px;
             text-shadow: 0 2px 6px rgba(0,0,0,0.45);
         }
-        
+
         header p {
             font-size: 1.35em;
             opacity: 0.96;
             text-shadow: 0 1px 4px rgba(0,0,0,0.45);
         }
-        
+
         .search-box {
             background: rgba(43, 84, 126, 0.16);
             border: 1px solid rgba(43, 84, 126, 0.32);
@@ -71,7 +71,7 @@
             top: 12px;
             z-index: 100;
         }
-        
+
         .search-box input {
             width: 100%;
             padding: 12px 16px;
@@ -81,11 +81,11 @@
             outline: none;
             transition: border-color 0.3s;
         }
-        
+
         .search-box input:focus {
             border-color: var(--primary);
         }
-        
+
         .filter-buttons {
             display: flex;
             gap: 10px;
@@ -128,7 +128,7 @@
         html {
             scroll-behavior: smooth;
         }
-        
+
         .filter-btn {
             padding: 8px 16px;
             border: none;
@@ -139,20 +139,20 @@
             background: var(--light);
             color: var(--dark);
         }
-        
+
         .filter-btn:hover,
         .filter-btn.active {
             background: var(--primary);
             color: white;
         }
-        
+
         .recipe-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .recipe-card {
             background: rgba(43, 84, 126, 0.18);
             border: 1px solid rgba(43, 84, 126, 0.36);
@@ -167,18 +167,18 @@
             flex-direction: column;
             min-height: 170px;
         }
-        
+
         .recipe-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-        
+
         .recipe-card h3 {
             color: var(--primary);
             margin-bottom: 10px;
             font-size: 1.3em;
         }
-        
+
         .recipe-card .category {
             display: inline-block;
             background: var(--light);
@@ -188,7 +188,7 @@
             font-size: 12px;
             margin-bottom: 10px;
         }
-        
+
         .recipe-card p {
             color: #6c7a89;
             font-size: 15px;
@@ -197,7 +197,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        
+
         .section-title {
             color: var(--secondary);
             font-size: 1.8em;
@@ -205,14 +205,14 @@
             padding-bottom: 10px;
             border-bottom: 3px solid var(--primary);
         }
-        
+
         .stats {
             display: flex;
             gap: 20px;
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-        
+
         .stat-box {
             background: rgba(43, 84, 126, 0.16);
             border: 1px solid rgba(43, 84, 126, 0.32);
@@ -220,25 +220,25 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
-        
+
         .stat-box .number {
             font-size: 2em;
             font-weight: bold;
             color: var(--primary);
         }
-        
+
         .stat-box .label {
             color: #7f8c8d;
             font-size: 14px;
         }
-        
+
         .no-results {
             text-align: center;
             padding: 60px 20px;
             color: #7f8c8d;
             font-size: 1.2em;
         }
-        
+
         footer {
             text-align: center;
             padding: 30px;
@@ -261,14 +261,14 @@
             display: none;
             z-index: 120;
         }
-        
+
         @media (max-width: 768px) {
             header {
                 padding: 38px 20px;
                 background-position: center 55%;
                 text-align: center;
             }
-            
+
             header h1 {
                 font-size: 1.7em;
                 margin-left: 0;
@@ -279,7 +279,7 @@
                 margin-left: 0;
                 white-space: nowrap;
             }
-            
+
             .recipe-grid {
                 grid-template-columns: 1fr;
             }
@@ -310,10 +310,10 @@
 <body>
     <div class="container">
         <header>
-            <h1>Rob’s Recipes</h1>
+            <h1>Rob's Recipes</h1>
             <p>Curated recipes for great meals at home</p>
         </header>
-        
+
         <div class="stats">
             <div class="stat-box">
                 <div class="number" id="total-recipes">0</div>
@@ -324,11 +324,11 @@
                 <div class="label">Categories</div>
             </div>
         </div>
-        
+
         <div class="search-box">
-            <input 
-                type="text" 
-                id="search-input" 
+            <input
+                type="text"
+                id="search-input"
                 placeholder="Search recipes by name, ingredient, or category..."
                 aria-label="Search recipes"
             >
@@ -355,14 +355,14 @@
                     <label for="sort-select">Sort:</label>
                     <select id="sort-select" aria-label="Sort recipes">
                         <option value="default">Default</option>
-                        <option value="az">A–Z</option>
-                        <option value="za">Z–A</option>
+                        <option value="az">A-Z</option>
+                        <option value="za">Z-A</option>
                     </select>
                 </div>
             </div>
             <div class="results-count" id="results-count">Showing all recipes</div>
         </div>
-        
+
         <div id="recipe-container">
             <!-- Favorites -->
             <h2 class="section-title">Top Favorites</h2>
@@ -375,7 +375,7 @@
                 <a href="Chargrilled-Oysters.html" class="recipe-card" data-category="favorite seafood">
                     <span class="category">Favorite</span>
                     <h3>New Orleans Chargrilled Oysters</h3>
-                    <p>Drago's-style — garlic butter, Parmesan, screaming-hot grill</p>
+                    <p>Drago's-style - garlic butter, Parmesan, screaming-hot grill</p>
                 </a>
                 <a href="Make-Ahead-Braised-Beef-Short-Ribs.html" class="recipe-card" data-category="favorite beef">
                     <span class="category">Favorite</span>
@@ -394,7 +394,7 @@
                     <p>Scallops in white wine sauce</p>
                 </a>
                 <a href="Saffron-Garlic-Shrimp.html" class="recipe-card" data-category="seafood">
-                    <span class="category">Seafood</span>  
+                    <span class="category">Seafood</span>
                     <h3>Saffron Garlic Shrimp</h3>
                     <p>Rob's special recipe</p>
                 </a>
@@ -431,7 +431,7 @@
                 <a href="Chargrilled-Oysters.html" class="recipe-card" data-category="seafood">
                     <span class="category">Seafood</span>
                     <h3>New Orleans Chargrilled Oysters</h3>
-                    <p>Drago's-style — garlic butter, Parmesan, screaming-hot grill</p>
+                    <p>Drago's-style - garlic butter, Parmesan, screaming-hot grill</p>
                 </a>
                 <a href="Skewered-Scallops-over-Mushroom-Risotto.html" class="recipe-card" data-category="seafood">
                     <span class="category">Seafood</span>
@@ -444,7 +444,7 @@
                     <p>Grilled red snapper with crab, mushrooms, and lemon-butter sauce</p>
                 </a>
             </div>
-            
+
             <!-- Beef -->
             <h2 class="section-title">Beef</h2>
             <div class="recipe-grid" id="beef-recipes">
@@ -519,7 +519,7 @@
                     <p>Sweet South Mississippi-style dry ribs with sauce on the side</p>
                 </a>
             </div>
-            
+
             <!-- Lamb & Middle Eastern -->
             <h2 class="section-title">Lamb & Middle Eastern</h2>
             <div class="recipe-grid" id="lamb-recipes">
@@ -605,7 +605,7 @@
                     <p>House Cajun blend with paprika, garlic, cayenne and herbs</p>
                 </a>
             </div>
-            
+
             <!-- Soups & Stews -->
             <h2 class="section-title">Soups &amp; Stews</h2>
             <div class="recipe-grid" id="soup-recipes">
@@ -636,11 +636,11 @@
                 </a>
                 <a href="Robs-New-Orleans-Gumbo.html" class="recipe-card" data-category="soup seafood">
                     <span class="category">Stew</span>
-                    <h3>Rob’s New Orleans Gumbo</h3>
+                    <h3>Rob's New Orleans Gumbo</h3>
                     <p>Chicken-andouille gumbo with oyster liquor, shrimp, and optional crab</p>
                 </a>
             </div>
-            
+
             <!-- Breads -->
             <h2 class="section-title" id="bread-section">Breads</h2>
             <div class="recipe-grid" id="bread-recipes">
@@ -693,6 +693,11 @@
                     <span class="category">Side</span>
                     <h3>Mushroom Risotto</h3>
                     <p>Creamy wild mushroom risotto with Parmesan and herbs</p>
+                </a>
+                <a href="Ham-Hocks-and-White-Beans.html" class="recipe-card" data-category="side pork">
+                    <span class="category">Side</span>
+                    <h3>Ham Hocks &amp; White Beans</h3>
+                    <p>Smoky, silky, deeply comforting Southern stew for under $10</p>
                 </a>
             </div>
 
@@ -753,31 +758,31 @@
 
 
         </div>
-        
+
         <div id="no-results" class="no-results" style="display: none;">
             <p>No recipes found. Try a different search term or filter.</p>
         </div>
 
         <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑ Top</button>
-        
+
         <footer>
             <p>Recipe Collection • Last Updated: <span id="last-updated"></span></p>
             <p style="margin-top: 10px; font-size: 12px;">Files stored in: ~/.openclaw/workspace/Recipes/</p>
         </footer>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const recipeCards = document.querySelectorAll('.recipe-card');
             const categories = new Set();
             const uniqueRecipes = new Set();
-            
+
             recipeCards.forEach(card => {
                 const cats = card.getAttribute('data-category').split(' ');
                 cats.forEach(cat => categories.add(cat));
                 uniqueRecipes.add(card.getAttribute('href'));
             });
-            
+
             document.getElementById('total-recipes').textContent = uniqueRecipes.size;
             document.getElementById('total-categories').textContent = categories.size;
 
@@ -789,16 +794,16 @@
                     day: 'numeric'
                 })
                 : 'Unknown';
-            
+
             const searchInput = document.getElementById('search-input');
             const filterButtons = document.querySelectorAll('.filter-btn');
             const resultsCount = document.getElementById('results-count');
             const backToTopBtn = document.getElementById('back-to-top');
             const sortSelect = document.getElementById('sort-select');
             let activeFilter = 'all';
-            
+
             searchInput.addEventListener('input', filterRecipes);
-            
+
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
                     filterButtons.forEach(b => b.classList.remove('active'));
@@ -846,26 +851,26 @@
                     cards.forEach(card => grid.appendChild(card));
                 });
             }
-            
+
             function filterRecipes() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const cards = document.querySelectorAll('.recipe-card');
                 const visibleRecipes = new Set();
-                
+
                 cards.forEach(card => {
                     const title = card.querySelector('h3').textContent.toLowerCase();
                     const description = card.querySelector('p').textContent.toLowerCase();
                     const category = card.getAttribute('data-category');
                     const cardCategory = category.split(' ')[0];
-                    
-                    const matchesSearch = title.includes(searchTerm) || 
-                                         description.includes(searchTerm) || 
+
+                    const matchesSearch = title.includes(searchTerm) ||
+                                         description.includes(searchTerm) ||
                                          category.includes(searchTerm);
-                    
-                    const matchesFilter = activeFilter === 'all' || 
+
+                    const matchesFilter = activeFilter === 'all' ||
                                          cardCategory === activeFilter ||
                                          category.includes(activeFilter);
-                    
+
                     if (matchesSearch && matchesFilter) {
                         card.style.display = 'block';
                         visibleRecipes.add(card.getAttribute('href'));
@@ -875,9 +880,9 @@
                 });
 
                 const visibleCount = visibleRecipes.size;
-                
+
                 document.getElementById('no-results').style.display = visibleCount === 0 ? 'block' : 'none';
-                
+
                 document.querySelectorAll('.section-title').forEach(title => {
                     const grid = title.nextElementSibling;
                     const visibleCards = Array.from(grid.querySelectorAll('.recipe-card'))

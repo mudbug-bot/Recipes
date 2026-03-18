@@ -2,152 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ham Hocks & White Beans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ham-Hocks-and-White-Beans - Rob's Recipe Collection</title>
+  
   <style>
-    :root { --primary: #2B547E; }
+    :root {
+      --primary: #2B547E;
+      --secondary: #2c3e50;
+      --accent: #27ae60;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --muted: #6c7a89;
+      --paper: rgba(43, 84, 126, 0.10);
+      --paper-border: rgba(43, 84, 126, 0.28);
+      --note-bg: #fff7db;
+      --note-border: #e0be57;
+      --note-text: #6f5b15;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Georgia, serif; background: #f9f6f1; color: #2c2c2c; }
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 2.5rem 1.5rem 2rem;
-      text-align: center;
-    }
-    header h1 { font-size: 2.2rem; margin-bottom: 0.4rem; }
-    header p { font-size: 1rem; opacity: 0.85; }
-    .meta {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    .container { max-width: 780px; margin: 2rem auto; padding: 0 1.5rem 3rem; }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 1.6rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    h2 {
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.4rem;
-    }
-    p { line-height: 1.75; margin-bottom: 0.8rem; }
-    ul, ol { padding-left: 1.4rem; line-height: 1.9; }
-    li { margin-bottom: 0.4rem; }
-    .tip {
-      background: #eef4fb;
-      border-left: 4px solid var(--primary);
-      padding: 1rem 1.2rem;
-      border-radius: 6px;
-      font-style: italic;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.7;
+      color: var(--dark);
+      background: radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%), #f7f3eb;
+      padding: 20px;
     }
-    .cost-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
-    .cost-table td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #eee; }
-    .cost-table tr:last-child td { border-bottom: none; font-weight: bold; }
-    .source {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 2rem;
+    .page { max-width: 1020px; margin: 0 auto; }
+    .top-actions, .bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .top-actions { margin-bottom: 22px; }
+    .bottom-actions { justify-content: center; margin-top: 30px; }
+    .action-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.10); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .source a { color: var(--primary); }
-    .hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1.2rem;
-      background: var(--primary);
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-family: sans-serif;
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 14px rgba(0,0,0,0.14); background: #23476b; }
+    .recipe-card {
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(43,84,126,0.16); border-radius: 18px;
+      padding: 32px; box-shadow: 0 12px 28px rgba(0,0,0,0.08); backdrop-filter: blur(2px);
     }
-    .btn:hover { opacity: 0.85; }
+    .hero {
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)); color: #fff;
+      border-radius: 16px; padding: 34px 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.12); margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 2.55em; line-height: 1.12; margin-bottom: 14px; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+    .hero-copy { max-width: 700px; font-size: 1.05em; opacity: 0.98; text-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+    .meta-pill {
+      display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    }
+    .lead, .quote, .section-card, .rule, .tip, .recipe-details, .description, .components, .ingredients, .instructions {
+      border-radius: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .lead, .quote, .rule, .tip, .recipe-details, .description, .components {
+      background: var(--paper); border: 1px solid var(--paper-border); padding: 20px 22px; margin: 0 0 22px;
+    }
+    .lead { font-size: 1.03em; }
+    .quote { margin-top: 26px; }
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .section-card { background: rgba(255,255,255,0.56); border: 1px solid rgba(43,84,126,0.18); padding: 22px 22px 18px; }
+    h2 { color: var(--secondary); font-size: 1.52em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--primary); }
+    h3 { color: var(--secondary); font-size: 1.14em; margin: 18px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+    li ul, li ol { margin-top: 8px; }
+    img { max-width: 100%; border-radius: 14px; margin: 10px 0 20px; box-shadow: 0 6px 14px rgba(0,0,0,0.12); display: block; }
+    .note {
+      background: var(--note-bg); border-left: 4px solid var(--note-border); border-radius: 10px; padding: 12px 16px;
+      margin: 15px 0 0; font-size: 0.96em; color: var(--note-text);
+    }
+    @media (max-width: 768px) {
+      body { padding: 14px; }
+      .recipe-card { padding: 18px; border-radius: 14px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 1.95em; }
+      .action-btn { width: 100%; }
+    }
+    @media print {
+      .top-actions, .bottom-actions { display: none; }
+      body { padding: 0; background: #fff; }
+      .recipe-card, .hero, .lead, .quote, .section-card, .rule, .tip, .recipe-details, .description, .components { box-shadow: none; }
+      .recipe-card { border: none; background: #fff; padding: 0; }
+    }
   </style>
 </head>
 <body>
+  <div class="page">
+    <div class="top-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+      <a href="Ham-Hocks-and-White-Beans-Shopping.html" class="action-btn">📝 Shopping List</a>
+    </div>
 
-<header>
-  <h1>Ham Hocks &amp; White Beans</h1>
-  <p>The Luxury of Simplicity</p>
-  <div class="meta">
-    <span>🍲 Serves 4–6</span>
-    <span>⏱ 2½–3 hours</span>
-    <span>💵 ~$10 total</span>
+    <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Side</div>
+        <h1>Ham Hocks &amp; White Beans</h1>
+        <p class="hero-copy">A smoky, silky, deeply comforting pot of white beans enriched with ham hocks, garlic, onion, and stock — simple ingredients turned luxurious with time.</p>
+        <div class="meta-row">
+          <span class="meta-pill">🍲 Serves 4–6</span>
+          <span class="meta-pill">⏱ 2½–3 hours</span>
+          <span class="meta-pill">💵 About $9–10</span>
+        </div>
+      </section>
+
+      <img src="Ham-Hocks-and-White-Beans.jpg" alt="Ham Hocks and White Beans">
+
+      <div class="lead">
+        Two of the cheapest ingredients in the grocery store slowly transform into one of the richest, most satisfying bowls of food you can make. Tough smoked pork, humble dried beans, water, and time do all the heavy lifting.
+      </div>
+
+      <div class="content-grid">
+        <section class="section-card">
+          <h2>Why This Works</h2>
+          <p>As the ham hocks simmer, they release collagen, fat, and deep smoky flavor into the broth. At the same time, the beans soften and release starch, thickening the pot naturally until the broth turns silky and rich.</p>
+          <p>After a couple of hours, what started as water and bones becomes something that coats the spoon like gravy.</p>
+        </section>
+
+        <section class="section-card">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>2 to 3 smoked ham hocks</li>
+            <li>1 lb dried white beans (Great Northern, navy, or cannellini)</li>
+            <li>8 cloves garlic, smashed</li>
+            <li>1 small onion, diced</li>
+            <li>1 bay leaf</li>
+            <li>8–10 cups chicken stock</li>
+            <li>1 tsp smoked paprika</li>
+            <li>1 tsp black pepper</li>
+            <li>1 to 2 tbsp rice vinegar</li>
+            <li>Fresh chives, sliced, for garnish</li>
+          </ul>
+        </section>
+
+        <section class="section-card">
+          <h2>Method</h2>
+          <ol>
+            <li>Rinse the beans and pick out any debris. No soaking required.</li>
+            <li>In a large pot or Dutch oven combine the beans, ham hocks, onion, garlic, bay leaf, paprika, pepper, and chicken stock.</li>
+            <li>Bring to a simmer and cook gently, partially covered, for about 2½ to 3 hours, stirring occasionally. Add a little water if the beans begin to dry out.</li>
+            <li>Once the beans are tender and the ham hocks are falling apart, remove the hocks. Pull the meat from the bones, chop it, and return it to the pot.</li>
+            <li>Stir in the rice vinegar to brighten the broth.</li>
+            <li>Taste and adjust seasoning if needed. Garnish bowls with fresh chives before serving.</li>
+          </ol>
+        </section>
+
+        <section class="section-card">
+          <h2>Chef’s Trick</h2>
+          <p>Near the end of cooking, crush a small ladle of beans against the side of the pot and stir them back in. The natural starch thickens the broth and gives the whole dish a silky texture without adding anything.</p>
+        </section>
+
+        <section class="section-card">
+          <h2>What It Costs</h2>
+          <ul>
+            <li>Ham hocks: about $5</li>
+            <li>Dried beans: about $2</li>
+            <li>Onion and garlic: about $2</li>
+          </ul>
+          <div class="note">For roughly $9–10, you end up with a huge pot of smoky, rich beans that can feed a family. Not bad for one of the most luxurious bowls of comfort food you can make.</div>
+        </section>
+
+        <section class="section-card">
+          <h2>Ways to Use It</h2>
+          <p>This pot can be more than a soup. Fold in roasted pulled chicken, add braised greens, stir in leftover pulled pork, spoon it under grilled sausage or steak, or reduce it further into more of a stew or sauce.</p>
+        </section>
+
+        <div class="quote">
+          <strong>Summary:</strong> Ham hocks and white beans are a perfect example of how a couple inexpensive ingredients and a little patience can produce something far greater than the sum of their parts.
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+    </div>
   </div>
-</header>
-
-<img src="Ham-Hocks-and-White-Beans.jpg" alt="Ham Hocks and White Beans" class="hero-img">
-
-<div class="container">
-
-  <div class="card">
-    <h2>About This Dish</h2>
-    <p>Two of the cheapest ingredients in the grocery store slowly transform into one of the richest, most satisfying bowls of food you can make. Tough smoked pork, humble dried beans, water, and time. The ham hocks simmer, releasing collagen, fat, and deep savory flavor into the broth while the beans soften and release their starch, thickening everything naturally.</p>
-    <p>After a couple of hours, what started as water and bones becomes something that coats the spoon like gravy. Think of this pot as a foundation — fold in roasted chicken, braised greens, pulled pork, spoon it under grilled sausage or steak, or let it thicken into a sauce.</p>
-  </div>
-
-  <div class="card">
-    <h2>Ingredients</h2>
-    <ul>
-      <li>2 to 3 smoked ham hocks</li>
-      <li>1 lb dried white beans (Great Northern, navy, or cannellini)</li>
-      <li>8 cloves garlic, smashed</li>
-      <li>1 small onion, diced</li>
-      <li>1 bay leaf</li>
-      <li>8–10 cups chicken stock</li>
-      <li>1 tsp smoked paprika</li>
-      <li>1 tsp black pepper</li>
-      <li>1 to 2 tbsp rice vinegar</li>
-      <li>Fresh chives, sliced, for garnish</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Method</h2>
-    <ol>
-      <li>Rinse the beans and pick out any debris. No soaking required.</li>
-      <li>In a large pot or Dutch oven combine the beans, ham hocks, onion, garlic, bay leaf, paprika, pepper, and chicken stock.</li>
-      <li>Bring to a simmer and cook gently, partially covered, for about 2½ to 3 hours, stirring occasionally. Add a little water if the beans begin to dry out.</li>
-      <li>Once the beans are tender and the ham hocks are falling apart, remove the hocks. Pull the meat from the bones, chop it, and return it to the pot.</li>
-      <li>Stir in the rice vinegar to brighten the broth.</li>
-      <li>Taste and adjust seasoning if needed. Garnish bowls with fresh chives before serving.</li>
-    </ol>
-  </div>
-
-  <div class="card">
-    <h2>Chef's Trick</h2>
-    <div class="tip">Near the end of cooking, crush a small ladle of beans against the side of the pot and stir them back in. The natural starch thickens the broth and gives the whole dish a silky texture without adding anything.</div>
-  </div>
-
-  <div class="card">
-    <h2>What It Costs</h2>
-    <table class="cost-table">
-      <tr><td>Ham hocks</td><td>~$5</td></tr>
-      <tr><td>Dried beans</td><td>~$2</td></tr>
-      <tr><td>Onion and garlic</td><td>~$2</td></tr>
-      <tr><td>Total</td><td>~$9–10</td></tr>
-    </table>
-  </div>
-
-  <div style="text-align:center;">
-    <a href="Ham-Hocks-and-White-Beans-Shopping.html" class="btn">📝 Shopping List</a>
-  </div>
-
-  <div class="source">
-    <p>Recipe by <a href="https://open.substack.com/pub/andrewgruel/p/the-luxury-of-simplicity" target="_blank">Andrew Gruel — American Gravy</a></p>
-  </div>
-
-</div>
 </body>
 </html>

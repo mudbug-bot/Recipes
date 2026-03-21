@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bacon-Fat-Barbecue-Sauce - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #2B547E;
+      --secondary: #2c3e50;
+      --accent: #27ae60;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --muted: #6c7a89;
+      --paper: rgba(43, 84, 126, 0.10);
+      --paper-border: rgba(43, 84, 126, 0.28);
+      --note-bg: #fff7db;
+      --note-border: #e0be57;
+      --note-text: #6f5b15;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%), #f7f3eb;
+      padding: 20px;
+    }
+    .page { max-width: 1020px; margin: 0 auto; }
+    .top-actions, .bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .top-actions { margin-bottom: 22px; }
+    .bottom-actions { justify-content: center; margin-top: 30px; }
+    .action-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.10); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 14px rgba(0,0,0,0.14); background: #23476b; }
+    .recipe-card {
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(43,84,126,0.16); border-radius: 18px;
+      padding: 32px; box-shadow: 0 12px 28px rgba(0,0,0,0.08); backdrop-filter: blur(2px);
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)); color: #fff;
+      border-radius: 16px; padding: 34px 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.12); margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 2.55em; line-height: 1.12; margin-bottom: 14px; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+    .hero-copy { max-width: 700px; font-size: 1.05em; opacity: 0.98; text-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+    .meta-pill {
+      display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    }
+    .section-card, .quote {
+      border-radius: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .quote {
+      background: var(--paper); border: 1px solid var(--paper-border); padding: 20px 22px; margin: 22px 0 0;
+    }
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .section-card { background: rgba(255,255,255,0.56); border: 1px solid rgba(43,84,126,0.18); padding: 22px 22px 18px; }
+    h2 { color: var(--secondary); font-size: 1.52em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--primary); }
+    h3 { color: var(--secondary); font-size: 1.14em; margin: 18px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+    .note {
+      background: var(--note-bg); border-left: 4px solid var(--note-border); border-radius: 10px; padding: 12px 16px;
+      margin: 15px 0 0; font-size: 0.96em; color: var(--note-text);
+    }
+    @media (max-width: 768px) {
+      body { padding: 14px; }
+      .recipe-card { padding: 18px; border-radius: 14px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 1.95em; }
+      .action-btn { width: 100%; }
+    }
+    @media print {
+      .top-actions, .bottom-actions { display: none; }
+      body { padding: 0; background: #fff; }
+      .recipe-card, .hero, .quote, .section-card { box-shadow: none; }
+      .recipe-card { border: none; background: #fff; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+      <a href="Robs-BBQ-Sauce-Shopping.html" class="action-btn">📝 Shopping List</a>
+    </div>
+
+    <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Sauce</div>
+        <h1>Rob's BBQ Sauce</h1>
+        <p class="hero-copy">A rich, sweet-tangy barbecue sauce built with bacon fat or tallow, onion, garlic, brown sugar, cider vinegar, ketchup, and pantry spices.</p>
+        <div class="meta-row">
+          <span class="meta-pill">Category: Spice Mixes and Sauces</span>
+          <span class="meta-pill">Stovetop</span>
+          <span class="meta-pill">Simmer 10–15 min</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="section-card">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>2 tbsp tallow or bacon fat</li>
+            <li>1/3 yellow onion, finely chopped</li>
+            <li>4 cloves garlic, minced</li>
+            <li>1 cup light brown sugar</li>
+            <li>1 cup apple cider vinegar</li>
+            <li>2 cups ketchup</li>
+            <li>1 tsp paprika</li>
+            <li>1 tsp mustard powder</li>
+            <li>1 tsp fine sea salt</li>
+            <li>1 tsp black pepper</li>
+            <li>4 dashes Worcestershire sauce</li>
+          </ul>
+        </section>
+
+        <section class="section-card">
+          <h2>Method</h2>
+          <ol>
+            <li>Warm the tallow or bacon fat in a saucepan over medium heat.</li>
+            <li>Add the chopped onion and cook until softened.</li>
+            <li>Add the garlic and cook briefly until fragrant.</li>
+            <li>Stir in the brown sugar, apple cider vinegar, ketchup, paprika, mustard powder, sea salt, black pepper, and Worcestershire sauce.</li>
+            <li>Once combined, simmer for 10 to 15 minutes, stirring occasionally, until the sauce is smooth and slightly thickened.</li>
+            <li>Taste and adjust if needed, then use warm or cool and refrigerate.</li>
+          </ol>
+        </section>
+
+        <section class="section-card">
+          <h2>Good With</h2>
+          <ul>
+            <li>Ribs</li>
+            <li>Pork roast or pulled pork</li>
+            <li>Grilled or roasted chicken</li>
+            <li>Burgers or meatloaf glaze</li>
+          </ul>
+        </section>
+
+        <div class="note">Source image was labeled “Sauce Recipe,” with a handwritten note indicating bacon fat can be used. Rob clarified the finishing step: once combined, place it in a saucepan and simmer for 10–15 minutes.</div>
+
+        <div class="quote">
+          <strong>Summary:</strong> Sweet, tangy, smoky-leaning barbecue sauce with a deeper savory edge from bacon fat or tallow. Easy pantry sauce, worth keeping around.
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+    </div>
+  </div>
+</body>
+</html>

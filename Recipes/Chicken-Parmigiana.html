@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Parmigiana - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #2B547E;
+      --secondary: #2c3e50;
+      --accent: #27ae60;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --muted: #6c7a89;
+      --paper: rgba(43, 84, 126, 0.10);
+      --paper-border: rgba(43, 84, 126, 0.28);
+      --note-bg: #fff7db;
+      --note-border: #e0be57;
+      --note-text: #6f5b15;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%), #f7f3eb;
+      padding: 20px;
+    }
+    .page { max-width: 1020px; margin: 0 auto; }
+    .top-actions, .bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .top-actions { margin-bottom: 22px; }
+    .bottom-actions { justify-content: center; margin-top: 30px; }
+    .action-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.10); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 14px rgba(0,0,0,0.14); background: #23476b; }
+    .recipe-card {
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(43,84,126,0.16); border-radius: 18px;
+      padding: 32px; box-shadow: 0 12px 28px rgba(0,0,0,0.08); backdrop-filter: blur(2px);
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)); color: #fff;
+      border-radius: 16px; padding: 34px 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.12); margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 2.55em; line-height: 1.12; margin-bottom: 14px; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+    .hero-copy { max-width: 700px; font-size: 1.05em; opacity: 0.98; text-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+    .meta-pill {
+      display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    }
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .section-card, .quote {
+      border-radius: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .section-card { background: rgba(255,255,255,0.56); border: 1px solid rgba(43,84,126,0.18); padding: 22px 22px 18px; }
+    .quote { background: var(--paper); border: 1px solid var(--paper-border); padding: 20px 22px; }
+    h2 { color: var(--secondary); font-size: 1.52em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--primary); }
+    p { margin-bottom: 12px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+    .note {
+      background: var(--note-bg); border-left: 4px solid var(--note-border); border-radius: 10px; padding: 12px 16px;
+      margin: 15px 0 0; font-size: 0.96em; color: var(--note-text);
+    }
+    @media (max-width: 768px) {
+      body { padding: 14px; }
+      .recipe-card { padding: 18px; border-radius: 14px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 1.95em; }
+      .action-btn { width: 100%; }
+    }
+    @media print {
+      .top-actions, .bottom-actions { display: none; }
+      body { padding: 0; background: #fff; }
+      .recipe-card, .hero, .section-card, .quote { box-shadow: none; }
+      .recipe-card { border: none; background: #fff; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+      <a href="Chicken-Parmigiana-Shopping.html" class="action-btn">📝 Shopping List</a>
+    </div>
+
+    <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Poultry</div>
+        <h1>Chicken Parmigiana</h1>
+        <p class="hero-copy">Crispy breaded chicken with a rich tomato sauce and melted cheese, classic Italian-American done right.</p>
+        <div class="meta-row">
+          <div class="meta-pill">Serves 4</div>
+          <div class="meta-pill">425°F oven finish</div>
+          <div class="meta-pill">Fry, then bake</div>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="section-card">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>4 boneless skinless chicken breasts</li>
+            <li>1/2 cup all-purpose flour</li>
+            <li>2 large eggs</li>
+            <li>1 cup panko breadcrumbs</li>
+            <li>1/2 cup finely grated Parmesan</li>
+            <li>1 tsp garlic powder</li>
+            <li>1 tsp dried oregano</li>
+            <li>1 1/2 tsp kosher salt, divided</li>
+            <li>1/2 tsp black pepper, divided</li>
+            <li>4 tbsp olive oil, for frying</li>
+            <li>1 can crushed San Marzano tomatoes, 28 oz</li>
+            <li>4 garlic cloves, minced</li>
+            <li>8 fresh basil leaves, divided</li>
+            <li>6 oz low-moisture mozzarella, sliced</li>
+            <li>1/4 cup extra Parmesan, for topping</li>
+          </ul>
+        </section>
+
+        <section class="section-card">
+          <h2>Method</h2>
+          <ol>
+            <li>Warm 1 tbsp olive oil in a saucepan over medium heat. Add the minced garlic and cook about 60 seconds until fragrant. Add the crushed San Marzano tomatoes, half the basil, dried oregano, and a pinch of kosher salt. Simmer uncovered for 20 minutes until slightly thickened. Taste and adjust salt.</li>
+            <li>Halve each chicken breast horizontally to make 8 thinner cutlets, or pound to an even 1/2-inch thickness between plastic wrap. Season both sides with 1/2 tsp kosher salt and 1/2 tsp black pepper.</li>
+            <li>Set up three shallow bowls: flour seasoned with a pinch of salt, eggs beaten with a splash of water, and panko mixed with the grated Parmesan and garlic powder. Dredge each cutlet in flour, shake off excess, dip in egg, then press firmly into the panko-Parmesan mixture.</li>
+            <li>Heat the remaining 4 tbsp olive oil in a large oven-safe skillet over medium-high heat. Working in batches, fry the cutlets 3 to 4 minutes per side until deep golden. Don’t crowd the pan. Transfer to a wire rack while you fry the rest.</li>
+            <li>Preheat oven to 425°F. Arrange all fried cutlets back in the skillet or in a baking dish. Spoon a generous amount of sauce over each one. Top with the mozzarella and finish with the extra Parmesan.</li>
+            <li>Bake 12 to 15 minutes until the cheese is melted and beginning to brown at the edges. Finish under the broiler for 2 minutes if you want more color.</li>
+            <li>Let rest 5 minutes. Top with the remaining basil and serve over pasta or with crusty bread.</li>
+          </ol>
+        </section>
+
+        <section class="section-card">
+          <h2>Notes</h2>
+          <ul>
+            <li>San Marzano tomatoes make a real difference in the sauce.</li>
+            <li>Low-moisture mozzarella is essential, fresh mozzarella releases too much water.</li>
+            <li>Panko plus Parmesan gives better crunch than Italian breadcrumbs alone.</li>
+            <li>Don’t sauce the whole cutlet, leave the outer edges bare so the crust stays crisp.</li>
+          </ul>
+          <div class="note">The wire rack between the fry and bake is the move most home cooks skip. It keeps the crust from steaming itself soggy on the bottom.</div>
+        </section>
+
+        <div class="quote">
+          <strong>Serve it right:</strong> This one wants pasta, crusty bread, or both, and a little restraint with the sauce so the crunch survives the trip to the table.
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+    </div>
+  </div>
+</body>
+</html>

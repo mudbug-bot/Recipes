@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Lemon Thyme Chicken and Potatoes - Rob's Recipe Collection</title>
+  <style>
+    :root {
+      --primary: #2B547E;
+      --secondary: #2c3e50;
+      --accent: #27ae60;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --muted: #6c7a89;
+      --paper: rgba(43, 84, 126, 0.10);
+      --paper-border: rgba(43, 84, 126, 0.28);
+      --note-bg: #fff7db;
+      --note-border: #e0be57;
+      --note-text: #6f5b15;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: radial-gradient(circle at top right, rgba(43, 84, 126, 0.08), transparent 30%), #f7f3eb;
+      padding: 20px;
+    }
+    .page { max-width: 1020px; margin: 0 auto; }
+    .top-actions, .bottom-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .top-actions { margin-bottom: 22px; }
+    .bottom-actions { justify-content: center; margin-top: 30px; }
+    .action-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--primary); color: #fff; padding: 11px 18px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.10); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 14px rgba(0,0,0,0.14); background: #23476b; }
+    .recipe-card {
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(43,84,126,0.16); border-radius: 18px;
+      padding: 32px; box-shadow: 0 12px 28px rgba(0,0,0,0.08); backdrop-filter: blur(2px);
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(43,84,126,0.95), rgba(44,62,80,0.94)); color: #fff;
+      border-radius: 16px; padding: 34px 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.12); margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 2.55em; line-height: 1.12; margin-bottom: 14px; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+    .hero-copy { max-width: 760px; font-size: 1.05em; opacity: 0.98; text-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+    .meta-pill {
+      display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    }
+    .content-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .section-card, .quote {
+      border-radius: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .section-card { background: rgba(255,255,255,0.56); border: 1px solid rgba(43,84,126,0.18); padding: 22px 22px 18px; }
+    .quote { background: var(--paper); border: 1px solid var(--paper-border); padding: 20px 22px; }
+    h2 { color: var(--secondary); font-size: 1.52em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--primary); }
+    h3 { color: var(--secondary); font-size: 1.14em; margin: 18px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+    img { max-width: 100%; border-radius: 14px; margin: 10px 0 20px; box-shadow: 0 6px 14px rgba(0,0,0,0.12); display: block; }
+    .note {
+      background: var(--note-bg); border-left: 4px solid var(--note-border); border-radius: 10px; padding: 12px 16px;
+      margin: 15px 0 0; font-size: 0.96em; color: var(--note-text);
+    }
+    @media (max-width: 768px) {
+      body { padding: 14px; }
+      .recipe-card { padding: 18px; border-radius: 14px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 1.95em; }
+      .action-btn { width: 100%; }
+    }
+    @media print {
+      .top-actions, .bottom-actions { display: none; }
+      body { padding: 0; background: #fff; }
+      .recipe-card, .hero, .section-card, .quote { box-shadow: none; }
+      .recipe-card { border: none; background: #fff; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+      <a href="Simple-Lemon-Thyme-Chicken-and-Potatoes-Shopping.html" class="action-btn">📝 Shopping List</a>
+    </div>
+
+    <div class="recipe-card">
+      <section class="hero">
+        <div class="eyebrow">Poultry</div>
+        <h1>Simple Lemon Thyme Chicken and Potatoes</h1>
+        <p class="hero-copy">A weeknight chicken dinner that eats like something far fancier, crisp skin, buttery potatoes, a lemon-thyme pan sauce, and a sharp little salad to keep it all in balance.</p>
+        <div class="meta-row">
+          <div class="meta-pill">Serves 2 to 3</div>
+          <div class="meta-pill">Sheet pan + stovetop</div>
+          <div class="meta-pill">350°F oven</div>
+        </div>
+      </section>
+
+      <img src="Simple-Lemon-Thyme-Chicken-and-Potatoes.jpg" alt="Simple lemon thyme chicken and potatoes" />
+
+      <div class="content-grid">
+        <section class="section-card">
+          <h2>Ingredients</h2>
+          <h3>For the chicken and potatoes</h3>
+          <ul>
+            <li>4 bone-in, skin-on chicken thighs</li>
+            <li>1.5 lb baby Dutch yellow potatoes, halved</li>
+            <li>Extra virgin olive oil</li>
+            <li>1 tbsp fresh thyme, plus more for finishing</li>
+            <li>Salt</li>
+          </ul>
+          <h3>For the pan sauce and finish</h3>
+          <ul>
+            <li>1 to 2 tbsp olive oil or avocado oil</li>
+            <li>1 large Belgian shallot, sliced, or 2 regular shallots</li>
+            <li>1 lemon, halved</li>
+            <li>3 tbsp cold butter</li>
+            <li>Splash of water</li>
+            <li>Salt and freshly cracked pepper</li>
+          </ul>
+          <h3>For the salad</h3>
+          <ul>
+            <li>2 to 3 cups wild arugula</li>
+            <li>5 radishes, thinly sliced</li>
+            <li>2 tbsp apple cider vinegar</li>
+            <li>Extra virgin olive oil</li>
+            <li>1 tsp nutritional yeast</li>
+            <li>Salt and pepper</li>
+          </ul>
+        </section>
+
+        <section class="section-card">
+          <h2>Method</h2>
+          <ol>
+            <li>Heat the oven to 350°F.</li>
+            <li>On a sheet pan, toss the halved potatoes and chicken thighs with a generous amount of olive oil, thyme, and salt. Lay the chicken skin-side down directly on the pan, with the potatoes scattered around it.</li>
+            <li>Roast for about 15 minutes, until the chicken skin is starting to crisp where it contacts the pan and the potatoes are picking up golden color.</li>
+            <li>Remove the pan from the oven. Take the chicken off and set it aside on a plate. Toss the potatoes in the rendered chicken fat and scrape up the browned bits. Return the potatoes to the oven to continue roasting.</li>
+            <li>Heat a carbon steel or heavy pan over medium-high heat. Add the olive oil or avocado oil.</li>
+            <li>Place the chicken thighs skin-side down in the pan. Add the sliced shallots around the chicken so they soften and caramelize in the fat.</li>
+            <li>Cook 2 to 3 minutes to deepen the crust, then flip the chicken.</li>
+            <li>Add the juice of 1 lemon, the lemon halves directly into the pan, the butter, a small splash of water, salt, pepper, and fresh thyme.</li>
+            <li>Swirl the butter into the sauce as it melts. Once it emulsifies, kill the heat.</li>
+            <li>Soak the sliced radishes in cold water for 1 minute, then drain. Toss with arugula, cider vinegar, olive oil, nutritional yeast, salt, and pepper. Keep it light and sharp.</li>
+            <li>Pull the potatoes from the oven and scrape everything, crispy bits included, into a serving dish. Top with the chicken. Spoon the lemon-thyme butter sauce and caramelized shallots over everything. Serve the salad on the side.</li>
+          </ol>
+        </section>
+
+        <section class="section-card">
+          <h2>Notes</h2>
+          <ul>
+            <li>The whole point is render, reuse, and layer flavor instead of piling on more ingredients.</li>
+            <li>Starting the chicken skin-side down on the sheet pan helps crisp the skin and seasons the potatoes with chicken fat right away.</li>
+            <li>The acid at the end keeps the plate from feeling heavy.</li>
+          </ul>
+          <div class="note">If you can run an oven and a pan at the same time, you can make this. That’s the beauty of it.</div>
+        </section>
+
+        <div class="quote">
+          <strong>Why it works:</strong> The potatoes get the benefit of rendered chicken fat, the pan sauce is built from browned bits and lemon butter, and the peppery salad cuts straight through the richness.
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="Recipe-Index.html" class="action-btn">← Back to Recipe Index</a>
+    </div>
+  </div>
+</body>
+</html>

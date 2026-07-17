@@ -147,18 +147,11 @@ module.exports = async (req, res) => {
     return sendJson(res, 405, { error: 'Method not allowed' });
   }
 
-  const requestOrigin = req.headers.origin || '';
-  const requestReferer = req.headers.referer || '';
-  const siteOrigin = new URL(SITE_ROOT).origin;
-  const allowedOrigin = !requestOrigin || requestOrigin === siteOrigin;
-  const allowedReferer = !requestReferer || requestReferer.startsWith(siteOrigin);
-
-  if (!allowedOrigin || !allowedReferer) {
-    return sendJson(res, 403, { error: 'Forbidden' });
-  }
-
-  if (PRINT_SECRET && req.headers['x-print-secret'] && req.headers['x-print-secret'] !== PRINT_SECRET) {
-    return sendJson(res, 401, { error: 'Unauthorized' });
+  if (PRINT_SECRET) {
+    const providedSecret = req.headers['x-print-secret'] || (req.body && req.body.secret);
+    if (providedSecret && providedSecret !== PRINT_SECRET) {
+      return sendJson(res, 401, { error: 'Unauthorized' });
+    }
   }
 
   try {

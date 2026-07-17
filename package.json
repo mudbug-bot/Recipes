@@ -1,8 +1,5 @@
 {
   "name": "mudbug-recipes",
   "private": true,
-  "version": "1.0.0",
-  "dependencies": {
-    "nodemailer": "^6.10.0"
-  }
+  "version": "1.0.0"
 }

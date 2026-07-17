@@ -1,16 +1,11 @@
 const fs = require('fs/promises');
 const path = require('path');
-const nodemailer = require('nodemailer');
 
 const SITE_ROOT = process.env.SITE_ROOT || 'https://mudbug-recipes.netlify.app';
 const PRINTER_EMAIL = process.env.EPSON_PRINTER_EMAIL;
-const SMTP_HOST = process.env.SMTP_HOST;
-const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
-const SMTP_SECURE = String(process.env.SMTP_SECURE || 'false').toLowerCase() === 'true';
-const SMTP_USER = process.env.SMTP_USER;
-const SMTP_PASS = process.env.SMTP_PASS;
-const MAIL_FROM = process.env.MAIL_FROM || SMTP_USER;
-const PRINT_SHARED_SECRET = process.env.PRINT_SHARED_SECRET;
+const MAIL_FROM = process.env.MAIL_FROM;
+const POSTMARK_SERVER_TOKEN = process.env.POSTMARK_SERVER_TOKEN;
+const PRINT_SECRET = process.env.PRINT_SECRET;
 
 function sendJson(res, status, payload) {
   res.status(status).setHeader('Content-Type', 'application/json');
@@ -120,24 +115,31 @@ function buildHtmlBody({ recipeName, sections }, sourceUrl) {
 }
 
 async function sendPrintEmail(parsed, sourceUrl) {
-  if (!PRINTER_EMAIL || !SMTP_HOST || !SMTP_USER || !SMTP_PASS || !MAIL_FROM) {
-    throw new Error('Missing printer email configuration');
+  if (!PRINTER_EMAIL || !MAIL_FROM || !POSTMARK_SERVER_TOKEN) {
+    throw new Error('Missing Postmark configuration');
   }
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: SMTP_PORT,
-    secure: SMTP_SECURE,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  const response = await fetch('https://api.postmarkapp.com/email', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-Postmark-Server-Token': POSTMARK_SERVER_TOKEN,
+    },
+    body: JSON.stringify({
+      From: MAIL_FROM,
+      To: PRINTER_EMAIL,
+      Subject: `Shopping List - ${parsed.recipeName}`,
+      TextBody: buildTextBody(parsed, sourceUrl),
+      HtmlBody: buildHtmlBody(parsed, sourceUrl),
+      MessageStream: 'outbound',
+    }),
   });
 
-  await transporter.sendMail({
-    from: MAIL_FROM,
-    to: PRINTER_EMAIL,
-    subject: `Shopping List - ${parsed.recipeName}`,
-    text: buildTextBody(parsed, sourceUrl),
-    html: buildHtmlBody(parsed, sourceUrl),
-  });
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`Postmark send failed (${response.status}): ${details}`);
+  }
 }
 
 module.exports = async (req, res) => {
@@ -145,11 +147,18 @@ module.exports = async (req, res) => {
     return sendJson(res, 405, { error: 'Method not allowed' });
   }
 
-  if (PRINT_SHARED_SECRET) {
-    const provided = req.headers['x-print-secret'] || (req.body && req.body.secret);
-    if (provided !== PRINT_SHARED_SECRET) {
-      return sendJson(res, 401, { error: 'Unauthorized' });
-    }
+  const requestOrigin = req.headers.origin || '';
+  const requestReferer = req.headers.referer || '';
+  const siteOrigin = new URL(SITE_ROOT).origin;
+  const allowedOrigin = !requestOrigin || requestOrigin === siteOrigin;
+  const allowedReferer = !requestReferer || requestReferer.startsWith(siteOrigin);
+
+  if (!allowedOrigin || !allowedReferer) {
+    return sendJson(res, 403, { error: 'Forbidden' });
+  }
+
+  if (PRINT_SECRET && req.headers['x-print-secret'] && req.headers['x-print-secret'] !== PRINT_SECRET) {
+    return sendJson(res, 401, { error: 'Unauthorized' });
   }
 
   try {

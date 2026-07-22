@@ -82,8 +82,8 @@ function parseShoppingPage(html, pagePath) {
   return { recipeName, sections };
 }
 
-function buildTextBody({ recipeName, sections }, sourceUrl) {
-  const lines = [recipeName, '', `Source: ${sourceUrl}`, ''];
+function buildTextBody({ recipeName, sections }) {
+  const lines = [`Shopping List: ${recipeName}`, ''];
   for (const section of sections) {
     lines.push(section.title);
     for (const item of section.items) {
@@ -94,22 +94,21 @@ function buildTextBody({ recipeName, sections }, sourceUrl) {
   return lines.join('\n').trim();
 }
 
-function buildHtmlBody({ recipeName, sections }, sourceUrl) {
+function buildHtmlBody({ recipeName, sections }) {
   const renderedSections = sections.map(section => `
-    <div style="margin:20px 0;">
-      <h2 style="font-size:18px; color:#2B547E; border-bottom:1px solid #2B547E; padding-bottom:6px; margin:0 0 10px;">${escapeHtml(section.title)}</h2>
+    <div style="margin:10px 0 12px; page-break-inside:avoid;">
+      <h2 style="font-size:14px; line-height:1.2; color:#2B547E; border-bottom:1px solid #2B547E; padding-bottom:3px; margin:0 0 5px; font-weight:700;">${escapeHtml(section.title)}</h2>
       <ul style="list-style:none; padding:0; margin:0;">
-        ${section.items.map(item => `<li style="padding:6px 0; border-bottom:1px solid #e5e7eb;">&#x2610; ${escapeHtml(item)}</li>`).join('')}
+        ${section.items.map(item => `<li style="padding:2px 0; border-bottom:1px solid #eef1f4; font-size:12px; line-height:1.2;">&#x2610; ${escapeHtml(item)}</li>`).join('')}
       </ul>
     </div>`).join('');
 
   return `<!DOCTYPE html>
 <html>
-  <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:#34495e; margin:0; padding:24px;">
-    <h1 style="margin:0 0 8px; color:#2c3e50;">Shopping List</h1>
-    <p style="margin:0 0 20px; color:#6b7280;">${escapeHtml(recipeName)}</p>
+  <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:#34495e; margin:0; padding:12px 14px; max-width:700px; font-size:12px; line-height:1.2;">
+    <h1 style="margin:0 0 3px; color:#2c3e50; font-size:18px; line-height:1.15;">Shopping List</h1>
+    <p style="margin:0 0 10px; color:#6b7280; font-size:12px; line-height:1.2;">${escapeHtml(recipeName)}</p>
     ${renderedSections}
-    <p style="margin-top:24px; font-size:12px; color:#6b7280;">Source: ${escapeHtml(sourceUrl)}</p>
   </body>
 </html>`;
 }
@@ -130,8 +129,8 @@ async function sendPrintEmail(parsed, sourceUrl) {
       From: MAIL_FROM,
       To: PRINTER_EMAIL,
       Subject: `Shopping List - ${parsed.recipeName}`,
-      TextBody: buildTextBody(parsed, sourceUrl),
-      HtmlBody: buildHtmlBody(parsed, sourceUrl),
+      TextBody: buildTextBody(parsed),
+      HtmlBody: buildHtmlBody(parsed),
       MessageStream: 'outbound',
     }),
   });

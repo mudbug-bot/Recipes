@@ -62,8 +62,11 @@ async function loadShoppingPage(pagePath, requestHost) {
 }
 
 function parseShoppingPage(html, pagePath) {
-  const titleMatch = html.match(/<p[^>]*>(.*?)<\/p>/i);
-  const recipeName = stripTags(titleMatch ? titleMatch[1] : path.basename(pagePath, '.html').replace(/-Shopping$/, '').replace(/-/g, ' '));
+  const subtitleMatch = html.match(/<div class="shopping-card">[\s\S]*?<h1>Shopping List<\/h1>[\s\S]*?<p[^>]*>(.*?)<\/p>/i);
+  const fallbackTitleMatch = html.match(/<p[^>]*>(.*?)<\/p>/i);
+  const recipeName = stripTags(
+    subtitleMatch ? subtitleMatch[1] : (fallbackTitleMatch ? fallbackTitleMatch[1] : path.basename(pagePath, '.html').replace(/-Shopping$/, '').replace(/-/g, ' '))
+  );
 
   const sections = [...html.matchAll(/<div class="section">([\s\S]*?)<\/div>/g)].map((match) => {
     const sectionHtml = match[1];

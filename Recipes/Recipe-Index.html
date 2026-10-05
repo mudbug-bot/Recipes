@@ -908,12 +908,36 @@
                     .replace(/[\u0300-\u036f]/g, '');
             }
 
-            // Broad food nouns should return the collection visitors expect.
-            // Specific multi-word searches (for example, "fish sauce") still
-            // use the detailed ingredient index below.
+            // Broad category nouns should return the collection visitors expect.
+            // Specific multi-word searches still use the curated major-ingredient index.
             const categorySearchAliases = {
                 fish: 'seafood',
-                shellfish: 'seafood'
+                shellfish: 'seafood',
+                seafood: 'seafood',
+                beef: 'beef',
+                poultry: 'poultry',
+                pork: 'pork',
+                lamb: 'lamb',
+                pasta: 'pasta',
+                soup: 'soup',
+                soups: 'soup',
+                stew: 'soup',
+                stews: 'soup',
+                bread: 'bread',
+                breads: 'bread',
+                side: 'side',
+                sides: 'side',
+                salad: 'salad',
+                salads: 'salad',
+                breakfast: 'breakfast',
+                spice: 'spice',
+                spices: 'spice',
+                dessert: 'dessert',
+                desserts: 'dessert',
+                cocktail: 'cocktail',
+                cocktails: 'cocktail',
+                favorite: 'favorite',
+                favorites: 'favorite'
             };
 
             function filterRecipes() {

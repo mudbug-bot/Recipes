@@ -908,11 +908,22 @@
                     .replace(/[\u0300-\u036f]/g, '');
             }
 
+            // Broad food nouns should return the collection visitors expect.
+            // Specific multi-word searches (for example, "fish sauce") still
+            // use the detailed ingredient index below.
+            const categorySearchAliases = {
+                fish: 'seafood',
+                shellfish: 'seafood'
+            };
+
             function filterRecipes() {
                 const searchTerms = normalizeSearchText(searchInput.value)
                     .trim()
                     .split(/\s+/)
                     .filter(Boolean);
+                const categoryIntent = searchTerms.length === 1
+                    ? categorySearchAliases[searchTerms[0]] || null
+                    : null;
                 const cards = document.querySelectorAll('.recipe-card');
                 const visibleRecipes = new Set();
 
@@ -928,7 +939,9 @@
                         card.dataset.search || ''
                     ].join(' '));
 
-                    const matchesSearch = searchTerms.every(term => searchableText.includes(term));
+                    const matchesSearch = categoryIntent
+                        ? category.split(' ').includes(categoryIntent)
+                        : searchTerms.every(term => searchableText.includes(term));
 
                     const matchesFilter = activeFilter === 'all' ||
                                          cardCategory === activeFilter ||
@@ -958,7 +971,9 @@
                 if (activeFilter === 'all' && searchTerms.length === 0) {
                     resultsCount.textContent = `Showing all ${visibleCount} recipes`;
                 } else {
-                    const filterLabel = activeFilter === 'all' ? 'all categories' : activeFilter;
+                    const filterLabel = activeFilter === 'all'
+                        ? categoryIntent || 'all categories'
+                        : activeFilter;
                     resultsCount.textContent = `Showing ${visibleCount} recipe${visibleCount === 1 ? '' : 's'} (${filterLabel})`;
                 }
             }
